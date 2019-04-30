@@ -1,0 +1,42 @@
+<_ type="object">
+  <id type="number">1</id>
+  <name>Bekleidung</name>
+  <position type="number">0</position>
+  <comparable type="boolean">false</comparable>
+  <sortMode type="number">3</sortMode>
+  <options type="array">
+    <_ type="object">
+      <id type="number">1</id>
+      <name>Farbe</name>
+      <filterable type="boolean">true</filterable>
+    </_>
+    <_ type="object">
+      <id type="number">2</id>
+      <name>Größe</name>
+      <filterable type="boolean">true</filterable>
+    </_>
+  </options>
+  <attribute type="null"/>
+</_><_ type="object">
+  <id type="number">2</id>
+  <name>Medikamente</name>
+  <position type="number">0</position>
+  <comparable type="boolean">false</comparable>
+  <sortMode type="number">0</sortMode>
+  <options type="array">
+    <_ type="object">
+      <id type="number">3</id>
+      <name>Wirkstoff</name>
+      <filterable type="boolean">true</filterable>
+    </_>
+    <_ type="object">
+      <id type="number">5</id>
+      <name>Darreichungsform</name>
+      <filterable type="boolean">true</filterable>
+    </_>
+  </options>
+  <attribute type="null"/>
+</_>map {
+  "Bekleidung": ,
+  "Medikamente": 
+}

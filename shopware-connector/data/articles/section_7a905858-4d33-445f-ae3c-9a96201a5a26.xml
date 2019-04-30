@@ -1,0 +1,316 @@
+<articles>
+  <Section Guid="7a905858-4d33-445f-ae3c-9a96201a5a26">
+    <Title>Filme</Title>
+    <ShopCategoryId>128</ShopCategoryId>
+    <Tags/>
+    <ProductInfo Guid="703c99fc-4e0c-471e-a805-67139ba7e527">
+      <Status>Entw.</Status>
+      <ProductName>CEA-OGA Röntgenfilm grün</ProductName>
+      <Category Guid="d762d616-a466-4189-9c0f-ded284daa269"/>
+      <Text Guid="b55dca95-fe81-40d7-9c35-c6a3098dd3b0" Key="Beschreibung">
+        <Key>Beschreibung</Key>
+        <xhtml>
+          <p>
+            <span style="font-size: 14px;">Der CEA-OGA ist ein Universal-Röntgenfilm mit einem mittleren bis hohen Kontrast, der mit grün emittierenden Verstärkerfolien eingesetzt wird.</span>
+          </p>
+        </xhtml>
+      </Text>
+      <ProductItem Guid="06439031-36d6-4389-81d9-dfe264e0cdec">
+        <Name Type="dyn">CEA-OGA Röntgenfilm grün L: 24 cm B: 18 cm 100 Blatt</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>141878</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">24</Feature>
+        <Feature Key="Breite" Unit="cm">18</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Blatt</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">C &amp; L GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">10 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="36,40" Quant="1" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="30,50" Quant="1" Start="2017-03-01" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="f2ebb5c3-c3ba-4b67-bc90-1b18593d8f1c">
+        <Name Type="dyn">CEA-OGA Röntgenfilm grün L: 30 cm B: 24 cm 100 Blatt</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>147679</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">30</Feature>
+        <Feature Key="Breite" Unit="cm">24</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Blatt</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">C &amp; L GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">10 Tage</Feature>
+        <Image Purpose="prod-print" Source="147679.tif" width="2000" height="3000" Directory="C:/Syncrovet/Syncrovet3.Data/Images/print"/>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="61,24" Quant="1" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="50,60" Quant="1" Start="2017-03-01" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="f3f6a2f8-c299-4fe1-9a5c-d46aa76ab880">
+        <Name Type="dyn">CEA-OGA Röntgenfilm grün L: 40 cm B: 30 cm 100 Blatt</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>147681</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">40</Feature>
+        <Feature Key="Breite" Unit="cm">30</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Blatt</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">C &amp; L GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">10 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="101,01" Quant="1" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="81,80" Quant="1" Start="2017-03-01" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="ca46d1d3-3f2f-42dd-83fc-188b23b7c49f">
+        <Name Type="dyn">CEA-OGA Röntgenfilm grün L: 43 cm B: 35 cm 100 Blatt</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>152477</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">43</Feature>
+        <Feature Key="Breite" Unit="cm">35</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Blatt</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">C &amp; L GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">10 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="131,31" Quant="1" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="97,70" Quant="1" Start="2017-03-01" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+    </ProductInfo>
+    <ProductInfo Guid="c8edf285-a203-49db-a67c-d1078747d875">
+      <Status>Entw.</Status>
+      <ProductName>Fuji Mammographie-film UM-MA HC</ProductName>
+      <Category Guid="d762d616-a466-4189-9c0f-ded284daa269"/>
+      <Text Guid="c91408dd-2d5e-45af-afde-0d341953b0a9" Key="Beschreibung">
+        <Key>Beschreibung</Key>
+        <xhtml>
+          <div>
+<p>Der Fuji UMMA HC Mammographiefilm ist ein einseitig beschichteter orthochromatischer Film, der speziell für alle mammographischen Anwendungen entwickelt wurde, in denen es auf hohe Empfindlichkeit, hohen Kontrast und hohe Auflösung ankommt. </p>
+</div>
+        </xhtml>
+      </Text>
+      <ProductItem Guid="287b5e57-07c8-45e2-bdb0-f11bc65c2052">
+        <Name Type="dyn">Fuji Mammographie-film UM-MA HC L: 24 cm B: 18 cm 100 Blatt</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>123969</SupplierArticleId>
+        <Feature Key="Länge">24 cm</Feature>
+        <Feature Key="Breite">18 cm</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Blatt</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">Typon Röntgen-Film GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">2 Tage</Feature>
+        <Image Purpose="prod-print" Source="123969.tif" width="2001" height="3000" Directory="C:/Syncrovet/Syncrovet3.Data/Images/print"/>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="67,90" Quant="1" readonly="1"/>
+      </ProductItem>
+    </ProductInfo>
+    <ProductInfo Guid="bbcb5a25-1871-4f35-a058-dcbddf2e030c">
+      <Status>Entw.</Status>
+      <ProductName>ReboPlus HD-G</ProductName>
+      <Category Guid="d762d616-a466-4189-9c0f-ded284daa269"/>
+      <Feature Key="Farbe">grün</Feature>
+      <Text Guid="5c277b74-fab8-4fbc-a0b4-70b4f6d40ad0" Key="Beschreibung">
+        <Key>Beschreibung</Key>
+        <xhtml>
+          <div>Der Röntgenfil ReboPlus HD-G ist ein grünempfindlicher, orthochromatischer Film mit hochauflösenden Eigenschaften der höchsten Markenqualitätsstufe.</div>
+<ul>
+<li>100 % Qualität</li>
+<li>Entspricht den Anforderungen des europäischen Medizinproduktegestzes ( MPG ) und der  Röntgenverordnung ( -RÖV- )</li>
+<li>Hohe Auflösung</li>
+<li>Leistungsstark mit hoher Kontrastgebung</li>
+<li>Niedriger Schleier und geringer Rauschanteil</li>
+<li>Verwendbar für Hand- oder Maschinenentwicklung</li>
+</ul>
+        </xhtml>
+      </Text>
+      <ProductItem Guid="36a0f9fe-ba0c-4515-a736-26823cbb435f">
+        <Name Type="dyn">ReboPlus HD-G grün L: 18 cm B: 13 cm</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>123966</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">18</Feature>
+        <Feature Key="Breite" Unit="cm">13</Feature>
+        <Image Purpose="prod-print" Source="123966.tif" width="2001" height="3000" Directory="C:/Syncrovet/Syncrovet3.Data/Images/print"/>
+      </ProductItem>
+      <ProductItem Guid="0aefe2b6-7e46-4e6c-b7d9-4bffdb58199a">
+        <Name Type="dyn">ReboPlus HD-G grün L: 24 cm B: 18 cm</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>123967</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">24</Feature>
+        <Feature Key="Breite" Unit="cm">18</Feature>
+        <Image Purpose="prod-print" Source="123967.tif" width="2001" height="3000" Directory="D:/Syncrovet/Syncrovet3.Data/Images/print"/>
+      </ProductItem>
+      <ProductItem Guid="22ddffd9-8dd0-4e3b-b088-5885b89fb162">
+        <Name Type="dyn">ReboPlus HD-G grün L: 40 cm B: 20 cm</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>123972</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">40</Feature>
+        <Feature Key="Breite" Unit="cm">20</Feature>
+        <Image Purpose="prod-print" Source="123972.tif" width="2001" height="3000" Directory="D:/Syncrovet/Syncrovet3.Data/Images/print"/>
+      </ProductItem>
+      <ProductItem Guid="813a920d-a0b4-4d56-a3d3-8b1194cfe989">
+        <Name Type="dyn">ReboPlus HD-G grün L: 30 cm B: 24 cm</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>123971</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">30</Feature>
+        <Feature Key="Breite" Unit="cm">24</Feature>
+        <Image Purpose="prod-print" Source="123971.tif" width="2001" height="3000" Directory="D:/Syncrovet/Syncrovet3.Data/Images/print"/>
+      </ProductItem>
+      <ProductItem Guid="d27f5fde-5e23-4117-8cfe-6e96354f6325">
+        <Name Type="dyn">ReboPlus HD-G grün L: 40 cm B: 30 cm</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>123982</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">40</Feature>
+        <Feature Key="Breite" Unit="cm">30</Feature>
+      </ProductItem>
+    </ProductInfo>
+    <ProductInfo Guid="4df82e10-a15e-45de-9195-3546044f18e3">
+      <Status>Entw.</Status>
+      <ProductName>RETINA Röntgenfilm XOD/XOE</ProductName>
+      <Category Guid="d762d616-a466-4189-9c0f-ded284daa269"/>
+      <Text Guid="d046cf46-fc7c-4a3d-8f73-5504a67a504e" Key="Beschreibung">
+        <Key>Beschreibung</Key>
+        <xhtml>
+          <div>Der Qualiäts-Markenfilm RETINA x-ray XOD/XOD für eine breite und universelle Anwendung in der konventionellen- und Spezialröntgendiagnostik. Entsprechend der diagnostischen Fragestellung ermöglicht dieser Filmtyp in Kombination mit grün emittierenden Seltenerd-Verstärkungsfolien den Einsatz in den Empfindlichkeitsklassen 100-800 nach DIN 6867.</div>
+        </xhtml>
+      </Text>
+      <ProductItem Guid="60514593-dbe9-4cc8-a0ac-cda650a71c95">
+        <Name Type="dyn">RETINA Röntgenfilm XOD/XOE grün L: 40 cm B: 30 cm 100 Blatt</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>133887</SupplierArticleId>
+        <Feature Key="Länge">40 cm</Feature>
+        <Feature Key="Breite">30 cm</Feature>
+        <Feature Key="Farbe">grün</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Blatt</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">BW Plus Röntgen GmbH &amp; Co. KG</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">2 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="112,95" Quant="1" readonly="1"/>
+      </ProductItem>
+    </ProductInfo>
+    <ProductInfo Guid="a372e6df-dcdf-4db0-b951-b3a1556463a6">
+      <Status>Entw.</Status>
+      <ProductName>Röntgenfilm-Tankentwickler Ersatzhahn für Compact TX-Röntgengerät</ProductName>
+      <Category Guid="d762d616-a466-4189-9c0f-ded284daa269"/>
+      <Text Guid="813489a3-15cd-4e7c-a746-72b0978b0531" Key="Beschreibung" O="1">
+        <Key>Beschreibung</Key>
+        <xhtml>
+          <p>Mit Dichtung für Compact-Tankeinheiten.</p>
+        </xhtml>
+      </Text>
+      <ProductItem Guid="40a3b408-7893-4af8-ab86-6e617d89527b">
+        <Name Type="dyn">Röntgenfilm-Tankentwickler Ersatzhahn für Compact TX-Röntgengerät 1 Stück</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>142699</SupplierArticleId>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">1 Stück</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">CEA Deutschland Gmbh</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">5 Tage</Feature>
+        <Image Purpose="prod-print" Source="142699.tif" width="3000" height="2001" Directory="C:/Syncrovet/Syncrovet3.Data/Images/print"/>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="17" Quant="1" readonly="1"/>
+      </ProductItem>
+    </ProductInfo>
+    <ProductInfo Guid="d122fec5-562e-4b33-a6cf-3dd0c4db24d1">
+      <Status>Entw.</Status>
+      <ProductName>Röntgenfilmtasche</ProductName>
+      <Category Guid="d762d616-a466-4189-9c0f-ded284daa269"/>
+      <Text Guid="5edf19d7-ce7e-4ccc-a0ac-dccb3164f5dc" Key="Beschreibung" O="1">
+        <Key>Beschreibung</Key>
+        <xhtml>
+          <p>Aus braunem Natronpapier, gummiert.</p>
+        </xhtml>
+      </Text>
+      <ProductItem Guid="3c118ec2-8a64-47a0-850e-31494c5e3667">
+        <Name Type="dyn">Röntgenfilmtasche L: 25,5 cm B: 19,2 cm 100 Stück</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>107904</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">25,5</Feature>
+        <Feature Key="Breite" Unit="cm">19,2</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Stück</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">Wagener, Paul GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">5 Tage</Feature>
+        <Image Purpose="prod-print" Source="107904_107907_107977.tif" width="3000" height="2001" Directory="C:/Syncrovet/Syncrovet3.Data/Images/print"/>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="9,95" Quant="1" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="8,45" Quant="1" Start="2017-03-01" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="7398716a-7375-4238-833a-80ae2efb5ee2">
+        <Name Type="dyn">Röntgenfilmtasche L: 41 cm B: 31 cm 100 Stück</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>107907</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">41</Feature>
+        <Feature Key="Breite" Unit="cm">31</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Stück</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">Wagener, Paul GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">5 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="16,20" Quant="1" readonly="1"/>
+        <Price Type="Preis (Staffel 1)" Cou="DE" Tax="19" Net="14,50" Quant="&#xA;3&#xA;" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="14" Quant="1" Start="2017-03-31" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="c0c829a2-0fa8-4cd9-94c2-03662ab9e99f">
+        <Name Type="dyn">Röntgenfilmtasche L: 45 cm B: 37 cm 100 Stück</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>107977</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">45</Feature>
+        <Feature Key="Breite" Unit="cm">37</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Stück</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">Wagener, Paul GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">5 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="25,10" Quant="1" readonly="1"/>
+        <Price Type="Preis (Aktion)" Cou="DE" Tax="19" Net="24,60" Quant="1" Start="2017-03-01" End="2017-04-30" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="43efd311-b541-4b0f-8849-1078986e2721">
+        <Name Type="dyn">Röntgenfilmtasche L: 31,5 cm B: 25 cm 100 Stück</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>107898</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">31,5</Feature>
+        <Feature Key="Breite" Unit="cm">25</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">100 Stück</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">Wagner Paul GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">5 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="14,73" Quant="1" readonly="1"/>
+      </ProductItem>
+      <ProductItem Guid="e1e2b961-d38a-42a7-9d14-8febf527753f">
+        <Name Type="dyn">Röntgenfilmtasche L: 41 cm B: 31 cm 1 Stück</Name>
+        <Status>Entw.</Status>
+        <SupplierArticleId>107982</SupplierArticleId>
+        <Feature Key="Länge" Unit="cm">41</Feature>
+        <Feature Key="Breite" Unit="cm">31</Feature>
+        <Feature Key="Menge b.B. +Maßeinheit" readonly="1">1 Stück</Feature>
+        <Feature Key="Firmenbezeichnung" readonly="1">Wagner Paul GmbH</Feature>
+        <Feature Key="Steuerschlüssel" readonly="1">3 Mehrwertsteuer 19%</Feature>
+        <Feature Key="Gefahrgut" readonly="1"/>
+        <Feature Key="Temperatur Eigenschaften" readonly="1">Keine</Feature>
+        <Feature Key="Einheit für Fakturierung" readonly="1">Stück</Feature>
+        <Feature Key="Lieferzeit" readonly="1">5 Tage</Feature>
+        <Price Type="Preis (VK netto)" Cou="DE" Tax="19" Net="0,16" Quant="1" readonly="1"/>
+      </ProductItem>
+    </ProductInfo>
+  </Section>
+</articles>

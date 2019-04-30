@@ -1,0 +1,220 @@
+<Sections>
+  <Section Guid="f29b9537-4e52-4ca9-a953-504d63f39e76">
+    <Title>Praxisbedarf</Title>
+    <Section Guid="213bc9eb-d0b8-4340-80e1-390880a29f18">
+      <Title>Röntgenbedarf</Title>
+      <Section Guid="306b00dd-097a-468b-82e8-33f2b8d746a3">
+        <Title>Chemikalien</Title>
+        <ProductInfo Guid="690f8cbb-8faf-4438-834e-f36a7b0d8554">
+          <ProductItem Guid="7e29d713-74bf-45e3-98c0-9e64810ccccd"/>
+          <ProductItem Guid="880e822a-bf2e-414b-8324-379f20667e9a"/>
+          <ProductItem Guid="e0ee93fa-390c-4f8d-8c89-cdb8729d7679"/>
+        </ProductInfo>
+        <ProductInfo Guid="4a7e12ec-c5d2-409b-84a4-0572b80d06bd">
+          <ProductItem Guid="dc349bc3-cdeb-4fef-b7e2-3aac05b940b2"/>
+        </ProductInfo>
+        <ProductInfo Guid="f8e13fd8-ac91-4bce-a660-2ea1684352c4">
+          <ProductItem Guid="1c8fdc71-016b-49b4-8505-500ebf954fb3"/>
+        </ProductInfo>
+        <ProductInfo Guid="c6c63a37-29a4-4053-a0c0-18ec0ae78199">
+          <ProductItem Guid="b065e976-e268-4f1d-9f30-c7a2b84faeb4"/>
+        </ProductInfo>
+        <ProductInfo Guid="e019ab7c-bf7a-4ddd-859e-af80d664e3f3">
+          <ProductItem Guid="6b17ab9d-e1ec-4b23-bbda-761404235c88"/>
+        </ProductInfo>
+        <ProductInfo Guid="c913f018-3526-4301-a2e8-eff84016f2c2">
+          <ProductItem Guid="81dc1fcd-a619-4080-83e4-3374d31b067a"/>
+        </ProductInfo>
+        <ProductInfo Guid="c173dcbe-ea21-47cd-aa8b-7b34f73076c1">
+          <ProductItem Guid="c06c8bd9-3a57-42c9-ab45-c972971846ac"/>
+        </ProductInfo>
+        <ProductInfo Guid="62100030-4576-4566-805f-a7fc16e04230">
+          <ProductItem Guid="1722f8e2-ad8e-43a6-9f55-30d17d4b5932"/>
+          <ProductItem Guid="35c01693-e5bd-473f-aa7a-2718953f4b8e"/>
+        </ProductInfo>
+        <ProductInfo Guid="b3ef4317-7b95-4ac8-a254-518216c94703">
+          <ProductItem Guid="46675663-cf12-4abb-bdea-d60f6e57364b"/>
+        </ProductInfo>
+        <ProductInfo Guid="67e7b150-bedb-46e6-9585-92d0296b9bb7">
+          <ProductItem Guid="5ef6df90-24c0-4db8-80eb-58059fb21f75"/>
+        </ProductInfo>
+        <ProductInfo Guid="811fb2e8-b000-4362-acf7-fd1d05f07d5c">
+          <ProductItem Guid="0a822c75-f001-4382-a2ae-8f3dea83bc37"/>
+        </ProductInfo>
+        <ProductInfo Guid="4f05b020-7842-401d-95fb-c8e5a42980c3">
+          <ProductItem Guid="1e7ddc01-e2c4-488f-aafd-e027bca43bf8"/>
+        </ProductInfo>
+        <ProductInfo Guid="ede43ba7-0099-49ef-9041-fdc423a9129c">
+          <ProductItem Guid="29ff4895-beb3-42d1-aa79-cb36c0ed92d4"/>
+          <ProductItem Guid="d953af37-2efb-4614-8c97-4be3f9426aa2"/>
+        </ProductInfo>
+        <ProductInfo Guid="12819eab-4141-4d41-a507-bec0e1d65587">
+          <ProductItem Guid="8200f25f-923b-468d-8552-fb4857120c3c"/>
+        </ProductInfo>
+        <ProductInfo Guid="6552d56b-a1de-4284-8d76-126d25990ad2">
+          <ProductItem Guid="debc179e-15a7-4a2b-94bf-3a71a9dc8ae5"/>
+        </ProductInfo>
+        <ProductInfo Guid="77b9ec2f-686b-435c-bb76-130539fd3d9d">
+          <ProductItem Guid="b6831b58-b1a9-4027-8640-f1772a5e8af9"/>
+        </ProductInfo>
+        <ProductInfo Guid="d96d5666-75b7-414e-8380-6407a90d18c3">
+          <ProductItem Guid="7572028e-bc0b-49b3-8817-d1a2fc0cafae"/>
+        </ProductInfo>
+        <ProductInfo Guid="6c77579f-a137-44ee-9bbc-66fd109c7bb2">
+          <ProductItem Guid="97192cae-600e-4c33-a584-707596b8bf9b"/>
+        </ProductInfo>
+        <ShopCategoryId>107</ShopCategoryId>
+      </Section>
+      <Section Guid="7a905858-4d33-445f-ae3c-9a96201a5a26">
+        <Title>Filme</Title>
+        <ProductInfo Guid="703c99fc-4e0c-471e-a805-67139ba7e527">
+          <ProductItem Guid="06439031-36d6-4389-81d9-dfe264e0cdec"/>
+          <ProductItem Guid="f2ebb5c3-c3ba-4b67-bc90-1b18593d8f1c"/>
+          <ProductItem Guid="f3f6a2f8-c299-4fe1-9a5c-d46aa76ab880"/>
+          <ProductItem Guid="ca46d1d3-3f2f-42dd-83fc-188b23b7c49f"/>
+        </ProductInfo>
+        <ProductInfo Guid="c8edf285-a203-49db-a67c-d1078747d875">
+          <ProductItem Guid="287b5e57-07c8-45e2-bdb0-f11bc65c2052"/>
+        </ProductInfo>
+        <ProductInfo Guid="5672a50b-9eb1-41d4-b997-ee8d9ea59cde">
+          <ProductItem Guid="af73c66e-dedd-42c0-9655-a0bf7db26a47"/>
+          <ProductItem Guid="58c524ef-e79f-4edb-9c11-f7a2c1f2c473"/>
+          <ProductItem Guid="a74f7d63-f228-4308-b47e-d4507d099ac8"/>
+          <ProductItem Guid="ed9ebee6-904b-4233-b986-cce27dd00d95"/>
+        </ProductInfo>
+        <ProductInfo Guid="bbcb5a25-1871-4f35-a058-dcbddf2e030c">
+          <ProductItem Guid="36a0f9fe-ba0c-4515-a736-26823cbb435f"/>
+          <ProductItem Guid="0aefe2b6-7e46-4e6c-b7d9-4bffdb58199a"/>
+          <ProductItem Guid="22ddffd9-8dd0-4e3b-b088-5885b89fb162"/>
+          <ProductItem Guid="813a920d-a0b4-4d56-a3d3-8b1194cfe989"/>
+          <ProductItem Guid="d27f5fde-5e23-4117-8cfe-6e96354f6325"/>
+        </ProductInfo>
+        <ProductInfo Guid="4df82e10-a15e-45de-9195-3546044f18e3">
+          <ProductItem Guid="60514593-dbe9-4cc8-a0ac-cda650a71c95"/>
+        </ProductInfo>
+        <ProductInfo Guid="8a35e8cf-af35-4944-86d9-09270d6b842e">
+          <ProductItem Guid="e35b5c79-1b88-4074-8905-99681afc19da"/>
+        </ProductInfo>
+        <ProductInfo Guid="a372e6df-dcdf-4db0-b951-b3a1556463a6">
+          <ProductItem Guid="40a3b408-7893-4af8-ab86-6e617d89527b"/>
+        </ProductInfo>
+        <ProductInfo Guid="d122fec5-562e-4b33-a6cf-3dd0c4db24d1">
+          <ProductItem Guid="3c118ec2-8a64-47a0-850e-31494c5e3667"/>
+          <ProductItem Guid="7398716a-7375-4238-833a-80ae2efb5ee2"/>
+          <ProductItem Guid="c0c829a2-0fa8-4cd9-94c2-03662ab9e99f"/>
+          <ProductItem Guid="43efd311-b541-4b0f-8849-1078986e2721"/>
+          <ProductItem Guid="e1e2b961-d38a-42a7-9d14-8febf527753f"/>
+        </ProductInfo>
+      <ShopCategoryId>128</ShopCategoryId>
+      </Section>
+      <Section Guid="0c65f911-1732-43a6-8ce8-b6f2ce45e59e">
+        <Title>Schürzen</Title>
+        <ProductInfo Guid="c468aabd-e66a-4fbf-9270-de19da8a7547">
+          <ProductItem Guid="68e7f070-665e-4fd0-952b-844c5d37548d"/>
+        </ProductInfo>
+        <ProductInfo Guid="500465a9-6a52-48d8-871d-dc4ca9be020d">
+          <ProductItem Guid="577e5dff-73a3-4162-945b-3ed3ae90e38c"/>
+        </ProductInfo>
+        <ProductInfo Guid="d37841ac-3112-4904-8066-34d9652c5f8d">
+          <ProductItem Guid="f26f20d0-6a63-4cd6-a3bf-097051a66dcb"/>
+          <ProductItem Guid="5c72ad6e-127e-4d65-a1c0-551b0a907a74"/>
+        </ProductInfo>
+        <ProductInfo Guid="0fc28f3f-0522-44f6-8084-9c0f7eabb5d7">
+          <ProductItem Guid="0e77de2b-d157-47c0-89c9-2ce39cb04e38"/>
+        </ProductInfo>
+        <ProductInfo Guid="13a32cfb-f962-4bc8-bbd2-25d06c29e23d">
+          <ProductItem Guid="018092c3-6277-4d8c-aea6-bdf97d692169"/>
+          <ProductItem Guid="562300a3-f2eb-4d11-a06d-766fff3e11a7"/>
+          <ProductItem Guid="2d5ea72c-3834-4ef3-8b3e-ea1ed585e75e"/>
+          <ProductItem Guid="8eb13e19-b4d5-47e5-819c-734dd5e280ec"/>
+          <ProductItem Guid="509d28a6-b232-40a3-b260-f705ee4f6854"/>
+          <ProductItem Guid="b416f1dd-1066-4ee6-a8ae-5fde6589e7de"/>
+          <ProductItem Guid="684c1ee0-48d3-47ef-b9a0-0980ec0e0bd7"/>
+          <ProductItem Guid="6b64b4a7-d3c3-4e90-bc1e-4aade3050079"/>
+          <ProductItem Guid="05c88e8f-ec44-47dc-85b2-e49d983867d7"/>
+        </ProductInfo>
+        <ProductInfo Guid="65ff4b3c-33aa-4520-b27d-13943bddf592">
+          <ProductItem Guid="6b039b50-e9bc-4091-8de7-ec03f463ce79"/>
+          <ProductItem Guid="22a37f93-d312-4a4c-8dc8-66a6cf98b331"/>
+          <ProductItem Guid="8ad23ec3-466f-4600-8a6f-92c389018f55"/>
+        </ProductInfo>
+        <ProductInfo Guid="519c498c-d967-49db-b22c-3f75a19e215c">
+          <ProductItem Guid="73c6230b-90a8-47c5-8b87-04418bdd1a8f"/>
+        </ProductInfo>
+        <ShopCategoryId>108</ShopCategoryId>
+      </Section>
+      <Section Guid="295a77f1-4726-42b0-9884-e1958e85be31">
+        <Title>Röntgengeräte und Zubehör</Title>
+        <ProductInfo Guid="abf2aba3-6908-42a3-bdb9-bddd3a5561a7">
+          <ProductItem Guid="2339c335-2b03-4aa2-99ce-ff88628492c8"/>
+        </ProductInfo>
+        <ProductInfo Guid="9fac7e6d-5104-44ec-b1cc-ebd0ec59e145">
+          <ProductItem Guid="48e03dc2-efcb-449b-b38b-2580c7c46aac"/>
+        </ProductInfo>
+        <ProductInfo Guid="c5f70803-69a1-4bfe-9f98-d7b750465690">
+          <ProductItem Guid="5815c47b-9782-4db5-ae35-4a5c4c574ff3"/>
+        </ProductInfo>
+        <ProductInfo Guid="bc5275b5-f734-46cc-afe5-c5a27943ed64">
+          <ProductItem Guid="b0296264-c66d-4a5f-9f29-eef542d415ad"/>
+        </ProductInfo>
+        <ProductInfo Guid="68e7f24f-d5e5-4014-ba2b-b28a68fb106a">
+          <ProductItem Guid="4fceca6a-213b-41d1-b6b7-63494a96b898"/>
+        </ProductInfo>
+        <ProductInfo Guid="58a996f3-e7cf-42a0-866b-f66f61913013">
+          <ProductItem Guid="fa99f49f-4397-4ed5-91b6-f0e02dd214fe"/>
+        </ProductInfo>
+        <ProductInfo Guid="e85de1e3-96ac-43cd-b8d0-1890138a7582">
+          <ProductItem Guid="c683b7aa-42b9-4b90-a23d-95f3f023692a"/>
+        </ProductInfo>
+        <ProductInfo Guid="4583b8e3-fc2d-4f4d-bf12-162f3daca911">
+          <ProductItem Guid="ecac3953-35a0-4eb8-9730-dae785afb8ad"/>
+        </ProductInfo>
+        <ProductInfo Guid="64ebb901-de09-48c5-a0db-77e37e14dfa6">
+          <ProductItem Guid="aed38a53-b819-4e2b-bea9-daefb8e27ba5"/>
+        </ProductInfo>
+        <ProductInfo Guid="93d524b2-2e87-43a0-b0e1-62b7f74573d4">
+          <ProductItem Guid="b4a61c01-21b7-4f8d-81a2-b71916cd19e3"/>
+        </ProductInfo>
+        <ProductInfo Guid="42888447-187f-422c-a800-3d01a26c0baa">
+          <ProductItem Guid="5a6f9d19-129a-4c2b-b3fb-6065028e00d9"/>
+        </ProductInfo>
+        <ProductInfo Guid="eb1b1861-988a-4afc-b211-0e31e1a67605">
+          <ProductItem Guid="ca286207-cdac-41fb-8559-b0dd4dd2a755"/>
+        </ProductInfo>
+        <ProductInfo Guid="9bae9567-70e2-444b-995c-31a04242be75">
+          <ProductItem Guid="4ce6a3c1-b58b-483a-9e01-2fff21b95c18"/>
+        </ProductInfo>
+        <ProductInfo Guid="14dce626-64ca-49de-a9d2-63f9d12b1167">
+          <ProductItem Guid="14eda99d-c8af-4488-a528-20bea1172845"/>
+        </ProductInfo>
+        <ProductInfo Guid="fb7f6e21-db56-4a8a-b32d-6440ff8e106d">
+          <ProductItem Guid="5a122bd6-3fc0-4b25-b274-c317d8bddb64"/>
+        </ProductInfo>
+        <ShopCategoryId>109</ShopCategoryId>
+      </Section>
+      <Section Guid="8e47d199-5d9b-4437-8b93-13073004159b">
+        <Title>Röntgenfilmbetrachter</Title>
+        <ProductInfo Guid="0b13d18e-f818-4237-bf83-03c4301e3f59">
+          <ProductItem Guid="209365f8-e2a6-4555-bebd-199aee90889d"/>
+        </ProductInfo>
+        <ProductInfo Guid="e736a762-5697-4fad-8e2d-1241b5f9eaac">
+          <ProductItem Guid="c5589fa6-409d-40a7-9352-5127c128d458"/>
+          <ProductItem Guid="22c17bc8-6814-4f7c-bf3d-9a69ecdbc566"/>
+        </ProductInfo>
+        <ProductInfo Guid="941468de-e80f-4ac1-9dad-786fd95cec61">
+          <ProductItem Guid="9b578800-4834-40b0-8649-eee1aff49bea"/>
+          <ProductItem Guid="cb08ba28-d07f-4bf6-997b-3977c63a186c"/>
+          <ProductItem Guid="a6901523-e7c2-431b-8889-b20e37ed8119"/>
+        </ProductInfo>
+        <ProductInfo Guid="b2a0695f-8dc4-418f-8892-be07d0128ef1">
+          <ProductItem Guid="e3abbc62-5261-48a3-b801-78c1a7ae5a79"/>
+          <ProductItem Guid="ebaa6e29-600a-4ad7-aa6c-f3f200f5d2c4"/>
+        </ProductInfo>
+        <ShopCategoryId>110</ShopCategoryId>
+      </Section>
+      <ShopCategoryId>40</ShopCategoryId>
+    </Section>
+
+    <ShopCategoryId>5</ShopCategoryId>
+  </Section> 
+</Sections>

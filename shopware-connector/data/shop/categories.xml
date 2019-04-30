@@ -1,0 +1,3226 @@
+<json type="object">
+  <data type="array">
+    <_ type="object">
+      <id type="number">1</id>
+      <active type="boolean">true</active>
+      <name>Root</name>
+      <position type="number">0</position>
+      <parentId type="null"/>
+      <mediaId type="number">0</mediaId>
+      <childrenCount>1</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">3</id>
+      <active type="boolean">true</active>
+      <name>Deutsch</name>
+      <position type="number">0</position>
+      <parentId type="number">1</parentId>
+      <mediaId type="null"/>
+      <childrenCount>14</childrenCount>
+      <articleCount>34696</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">19</id>
+      <active type="boolean">true</active>
+      <name>Veterinär</name>
+      <position type="number">0</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>5</childrenCount>
+      <articleCount>5574</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">5</id>
+      <active type="boolean">true</active>
+      <name>Praxisbedarf</name>
+      <position type="number">1</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>11</childrenCount>
+      <articleCount>14313</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">270</id>
+      <active type="boolean">true</active>
+      <name>Praxiskatalog</name>
+      <position type="number">2</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">20</id>
+      <active type="boolean">true</active>
+      <name>Human</name>
+      <position type="number">3</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>3</childrenCount>
+      <articleCount>12794</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">132</id>
+      <active type="boolean">true</active>
+      <name>Aktionen</name>
+      <position type="number">4</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>77</childrenCount>
+      <articleCount>1625</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">194</id>
+      <active type="boolean">true</active>
+      <name>Neu</name>
+      <position type="number">5</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>20</childrenCount>
+      <articleCount>143</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">244</id>
+      <active type="boolean">true</active>
+      <name>Themenwelt</name>
+      <position type="number">6</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>1</childrenCount>
+      <articleCount>117</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">197</id>
+      <active type="boolean">true</active>
+      <name>Blog</name>
+      <position type="number">7</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>17</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">290</id>
+      <active type="boolean">true</active>
+      <name>almapharm GmbH</name>
+      <position type="number">8</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>119</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">192</id>
+      <active type="boolean">false</active>
+      <name>dogenzyme</name>
+      <position type="number">9</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">191</id>
+      <active type="boolean">false</active>
+      <name>Rebocare</name>
+      <position type="number">10</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">267</id>
+      <active type="boolean">false</active>
+      <name>Stücklistenartikel</name>
+      <position type="number">11</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">301</id>
+      <active type="boolean">true</active>
+      <name>ReboPlus Bonusprogramm</name>
+      <position type="number">12</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">291</id>
+      <active type="boolean">true</active>
+      <name>ReboPlus Teilnahmebedingungen</name>
+      <position type="number">13</position>
+      <parentId type="number">3</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">168</id>
+      <active type="boolean">true</active>
+      <name>Hygiene</name>
+      <position type="number">0</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>5</childrenCount>
+      <articleCount>979</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">125</id>
+      <active type="boolean">true</active>
+      <name>Laborausstattung</name>
+      <position type="number">2</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>2</childrenCount>
+      <articleCount>637</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">26</id>
+      <active type="boolean">true</active>
+      <name>Desinfektion</name>
+      <position type="number">3</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>4</childrenCount>
+      <articleCount>813</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">57</id>
+      <active type="boolean">true</active>
+      <name>Behandlung</name>
+      <position type="number">4</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>17</childrenCount>
+      <articleCount>2926</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">56</id>
+      <active type="boolean">true</active>
+      <name>Wundverschluss</name>
+      <position type="number">5</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>1</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">39</id>
+      <active type="boolean">true</active>
+      <name>Diagnostik</name>
+      <position type="number">6</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>7</childrenCount>
+      <articleCount>405</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">6</id>
+      <active type="boolean">true</active>
+      <name>Praxisausstattung</name>
+      <position type="number">7</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>15</childrenCount>
+      <articleCount>1914</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">38</id>
+      <active type="boolean">true</active>
+      <name>Instrumente und Geräte</name>
+      <position type="number">8</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>14</childrenCount>
+      <articleCount>2704</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">45</id>
+      <active type="boolean">true</active>
+      <name>Großtierpraxis</name>
+      <position type="number">10</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>11</childrenCount>
+      <articleCount>788</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">21</id>
+      <active type="boolean">true</active>
+      <name>Wundversorgung</name>
+      <position type="number">11</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>8</childrenCount>
+      <articleCount>2908</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">40</id>
+      <active type="boolean">true</active>
+      <name>Röntgenbedarf</name>
+      <position type="number">12</position>
+      <parentId type="number">5</parentId>
+      <mediaId type="null"/>
+      <childrenCount>5</childrenCount>
+      <articleCount>235</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">129</id>
+      <active type="boolean">true</active>
+      <name>OP- und Untersuchungsleuchten</name>
+      <position type="null"/>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>36</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">88</id>
+      <active type="boolean">true</active>
+      <name>Praxisausstattung</name>
+      <position type="null"/>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>42</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">18</id>
+      <active type="boolean">true</active>
+      <name>Bekleidung</name>
+      <position type="number">0</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1015</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">15</id>
+      <active type="boolean">true</active>
+      <name>Infusionsgeräte</name>
+      <position type="number">1</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>62</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">9</id>
+      <active type="boolean">true</active>
+      <name>Stühle</name>
+      <position type="number">2</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>18</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">12</id>
+      <active type="boolean">true</active>
+      <name>Waagen</name>
+      <position type="number">3</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>27</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">11</id>
+      <active type="boolean">true</active>
+      <name>Autoapotheken und Zubehör</name>
+      <position type="number">4</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>16</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">10</id>
+      <active type="boolean">true</active>
+      <name>Praxisschilder</name>
+      <position type="number">5</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>148</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">16</id>
+      <active type="boolean">true</active>
+      <name>Narkosegeräte und Zubehör</name>
+      <position type="number">6</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>88</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">17</id>
+      <active type="boolean">true</active>
+      <name>Elektrochirurgiegeräte</name>
+      <position type="number">7</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>28</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">14</id>
+      <active type="boolean">true</active>
+      <name>Schermaschinen</name>
+      <position type="number">8</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>132</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">76</id>
+      <active type="boolean">true</active>
+      <name>Narkosegeräte</name>
+      <position type="number">9</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>141</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">7</id>
+      <active type="boolean">true</active>
+      <name>OP- und Untersuchungstische</name>
+      <position type="number">10</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>76</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">13</id>
+      <active type="boolean">true</active>
+      <name>Käfige</name>
+      <position type="number">11</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>49</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">8</id>
+      <active type="boolean">true</active>
+      <name>OP-Lampen</name>
+      <position type="number">12</position>
+      <parentId type="number">6</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>36</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">33</id>
+      <active type="boolean">true</active>
+      <name>Veterinär Arzneimittel</name>
+      <position type="number">0</position>
+      <parentId type="number">19</parentId>
+      <mediaId type="null"/>
+      <childrenCount>7</childrenCount>
+      <articleCount>2574</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">145</id>
+      <active type="boolean">true</active>
+      <name>Pflegeprodukte und Hygiene</name>
+      <position type="number">1</position>
+      <parentId type="number">19</parentId>
+      <mediaId type="null"/>
+      <childrenCount>1</childrenCount>
+      <articleCount>437</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">30</id>
+      <active type="boolean">true</active>
+      <name>Diätfuttermittel und Ergänzungsfuttermittel</name>
+      <position type="number">2</position>
+      <parentId type="number">19</parentId>
+      <mediaId type="null"/>
+      <childrenCount>3</childrenCount>
+      <articleCount>1373</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">123</id>
+      <active type="boolean">true</active>
+      <name>Schädlingsbekämpfung</name>
+      <position type="number">4</position>
+      <parentId type="number">19</parentId>
+      <mediaId type="null"/>
+      <childrenCount>3</childrenCount>
+      <articleCount>117</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">24</id>
+      <active type="boolean">true</active>
+      <name>Pet-Shop</name>
+      <position type="number">5</position>
+      <parentId type="number">19</parentId>
+      <mediaId type="null"/>
+      <childrenCount>5</childrenCount>
+      <articleCount>1073</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">116</id>
+      <active type="boolean">true</active>
+      <name>Schönheit und Pflege</name>
+      <position type="null"/>
+      <parentId type="number">20</parentId>
+      <mediaId type="null"/>
+      <childrenCount>1</childrenCount>
+      <articleCount>1324</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">23</id>
+      <active type="boolean">true</active>
+      <name>Human Arzneimittel</name>
+      <position type="null"/>
+      <parentId type="number">20</parentId>
+      <mediaId type="null"/>
+      <childrenCount>6</childrenCount>
+      <articleCount>11252</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">184</id>
+      <active type="boolean">true</active>
+      <name>Nahrungsergänzungsmittel</name>
+      <position type="null"/>
+      <parentId type="number">20</parentId>
+      <mediaId type="null"/>
+      <childrenCount>1</childrenCount>
+      <articleCount>218</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">149</id>
+      <active type="boolean">true</active>
+      <name>Wundklammern und Entferner</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>10</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">140</id>
+      <active type="boolean">true</active>
+      <name>Nahtmaterial</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1145</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">106</id>
+      <active type="boolean">true</active>
+      <name>Mullkompressen und Tupfer</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>161</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">150</id>
+      <active type="boolean">true</active>
+      <name>Wundnadeln</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>418</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">103</id>
+      <active type="boolean">true</active>
+      <name>Wundschnellverbände/Fixierpflaster</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>718</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">104</id>
+      <active type="boolean">true</active>
+      <name>Hautklammergeräte</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">148</id>
+      <active type="boolean">true</active>
+      <name>Gewebekleber</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">105</id>
+      <active type="boolean">true</active>
+      <name>Stützverbände</name>
+      <position type="null"/>
+      <parentId type="number">21</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>443</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">121</id>
+      <active type="boolean">true</active>
+      <name>Zytostatika</name>
+      <position type="null"/>
+      <parentId type="number">23</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">131</id>
+      <active type="boolean">true</active>
+      <name>Human Arzneimittel</name>
+      <position type="null"/>
+      <parentId type="number">23</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7354</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">188</id>
+      <active type="boolean">true</active>
+      <name>Ophthalmika</name>
+      <position type="null"/>
+      <parentId type="number">23</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>556</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">119</id>
+      <active type="boolean">true</active>
+      <name>Homöopathika</name>
+      <position type="null"/>
+      <parentId type="number">23</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3036</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">147</id>
+      <active type="boolean">true</active>
+      <name>Infusionslösungen</name>
+      <position type="null"/>
+      <parentId type="number">23</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>266</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">120</id>
+      <active type="boolean">true</active>
+      <name>Insuline</name>
+      <position type="null"/>
+      <parentId type="number">23</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>29</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">47</id>
+      <active type="boolean">true</active>
+      <name>Halsbänder</name>
+      <position type="number">0</position>
+      <parentId type="number">24</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>253</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">48</id>
+      <active type="boolean">true</active>
+      <name>Leinen</name>
+      <position type="number">1</position>
+      <parentId type="number">24</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>234</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">81</id>
+      <active type="boolean">true</active>
+      <name>Hundekörbe/-Kissen</name>
+      <position type="number">2</position>
+      <parentId type="number">24</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>71</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">50</id>
+      <active type="boolean">true</active>
+      <name>Pet-Shop</name>
+      <position type="number">3</position>
+      <parentId type="number">24</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>454</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">49</id>
+      <active type="boolean">true</active>
+      <name>Transportboxen</name>
+      <position type="number">4</position>
+      <parentId type="number">24</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>61</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">59</id>
+      <active type="boolean">true</active>
+      <name>Zubehör</name>
+      <position type="null"/>
+      <parentId type="number">26</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>79</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">60</id>
+      <active type="boolean">true</active>
+      <name>Zellstoff</name>
+      <position type="null"/>
+      <parentId type="number">26</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">61</id>
+      <active type="boolean">true</active>
+      <name>Sterilisation</name>
+      <position type="null"/>
+      <parentId type="number">26</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>142</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">58</id>
+      <active type="boolean">true</active>
+      <name>Desinfektion</name>
+      <position type="null"/>
+      <parentId type="number">26</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>581</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">84</id>
+      <active type="boolean">true</active>
+      <name>Ergänzungsfuttermittel</name>
+      <position type="number">0</position>
+      <parentId type="number">30</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1112</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">53</id>
+      <active type="boolean">true</active>
+      <name>Trovet</name>
+      <position type="number">1</position>
+      <parentId type="number">30</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>167</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">54</id>
+      <active type="boolean">true</active>
+      <name>OrganicVet</name>
+      <position type="number">2</position>
+      <parentId type="number">30</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>94</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">122</id>
+      <active type="boolean">true</active>
+      <name>Veterinär Arzneimittel</name>
+      <position type="number">0</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2067</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">51</id>
+      <active type="boolean">true</active>
+      <name>Otologika</name>
+      <position type="number">1</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>18</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">52</id>
+      <active type="boolean">true</active>
+      <name>Ophthalmika</name>
+      <position type="number">2</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">35</id>
+      <active type="boolean">true</active>
+      <name>Homöopathika</name>
+      <position type="number">3</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>160</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">34</id>
+      <active type="boolean">true</active>
+      <name>Impfstoffe</name>
+      <position type="number">4</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>293</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">36</id>
+      <active type="boolean">true</active>
+      <name>Insuline</name>
+      <position type="number">5</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">82</id>
+      <active type="boolean">true</active>
+      <name>Infusionslösungen</name>
+      <position type="number">6</position>
+      <parentId type="number">33</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>24</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">93</id>
+      <active type="boolean">true</active>
+      <name>Augeninstrumente</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>58</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">156</id>
+      <active type="boolean">true</active>
+      <name>Bohrer</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">94</id>
+      <active type="boolean">true</active>
+      <name>Pferdezahnheilkunde</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>97</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">158</id>
+      <active type="boolean">true</active>
+      <name>Osteosynthese</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>312</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">151</id>
+      <active type="boolean">true</active>
+      <name>Pinzetten</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>224</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">95</id>
+      <active type="boolean">true</active>
+      <name>Scheren</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>408</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">159</id>
+      <active type="boolean">true</active>
+      <name>Skalpelle</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>132</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">90</id>
+      <active type="boolean">true</active>
+      <name>Klemmen</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>208</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">152</id>
+      <active type="boolean">true</active>
+      <name>Nadelhalter</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>136</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">160</id>
+      <active type="boolean">true</active>
+      <name>Diverse Instrumente</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>395</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">91</id>
+      <active type="boolean">true</active>
+      <name>Schermaschinen und Zubehör</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>1</childrenCount>
+      <articleCount>175</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">153</id>
+      <active type="boolean">true</active>
+      <name>Scharfe Löffel</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>50</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">92</id>
+      <active type="boolean">true</active>
+      <name>Instrumente und Geräte</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>490</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">155</id>
+      <active type="boolean">true</active>
+      <name>Krallenscheren</name>
+      <position type="null"/>
+      <parentId type="number">38</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>14</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">75</id>
+      <active type="boolean">true</active>
+      <name>Riesterinstrumente</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>32</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">175</id>
+      <active type="boolean">true</active>
+      <name>Thermometer</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>21</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">87</id>
+      <active type="boolean">true</active>
+      <name>Diagnostik</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>44</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">73</id>
+      <active type="boolean">true</active>
+      <name>Heineinstrumente</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>88</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">173</id>
+      <active type="boolean">true</active>
+      <name>Perkussionshammer</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>15</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">74</id>
+      <active type="boolean">true</active>
+      <name>Teststreifen</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>88</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">174</id>
+      <active type="boolean">true</active>
+      <name>Stethoskope</name>
+      <position type="null"/>
+      <parentId type="number">39</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>117</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">128</id>
+      <active type="boolean">true</active>
+      <name>Filme</name>
+      <position type="null"/>
+      <parentId type="number">40</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>22</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">107</id>
+      <active type="boolean">true</active>
+      <name>Chemikalien</name>
+      <position type="null"/>
+      <parentId type="number">40</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>23</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">108</id>
+      <active type="boolean">true</active>
+      <name>Schürzen</name>
+      <position type="null"/>
+      <parentId type="number">40</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>60</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">109</id>
+      <active type="boolean">true</active>
+      <name>Röntgengeräte und Zubehör</name>
+      <position type="null"/>
+      <parentId type="number">40</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>122</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">110</id>
+      <active type="boolean">true</active>
+      <name>Röntgenfilmbetrachter</name>
+      <position type="null"/>
+      <parentId type="number">40</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>8</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">100</id>
+      <active type="boolean">true</active>
+      <name>Besamung</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>24</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">180</id>
+      <active type="boolean">true</active>
+      <name>Huf- und Klauenbehandlung</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>265</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">101</id>
+      <active type="boolean">true</active>
+      <name>Großtierpraxis</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>123</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">181</id>
+      <active type="boolean">true</active>
+      <name>Roux-Revolver und Zubehör</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>58</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">187</id>
+      <active type="boolean">true</active>
+      <name>Spritzen und Kanülen</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>34</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">102</id>
+      <active type="boolean">true</active>
+      <name>Instrumente</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>123</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">177</id>
+      <active type="boolean">true</active>
+      <name>Zitzenbehandlung</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>51</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">98</id>
+      <active type="boolean">true</active>
+      <name>Sonden</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>40</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">178</id>
+      <active type="boolean">true</active>
+      <name>Geburtshilfe</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>48</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">99</id>
+      <active type="boolean">true</active>
+      <name>Nasenringe</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>17</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">179</id>
+      <active type="boolean">true</active>
+      <name>Nasenbremse</name>
+      <position type="null"/>
+      <parentId type="number">45</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">111</id>
+      <active type="boolean">true</active>
+      <name>Gewebekleber</name>
+      <position type="null"/>
+      <parentId type="number">56</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">162</id>
+      <active type="boolean">true</active>
+      <name>Halskragen</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>71</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">70</id>
+      <active type="boolean">true</active>
+      <name>Krallenscheren</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>12</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">65</id>
+      <active type="boolean">true</active>
+      <name>Spritzen</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>409</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">163</id>
+      <active type="boolean">true</active>
+      <name>Tierpflege</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>10</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">71</id>
+      <active type="boolean">true</active>
+      <name>Akupunkturnadeln</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>43</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">66</id>
+      <active type="boolean">true</active>
+      <name>Gefäße</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>371</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">165</id>
+      <active type="boolean">true</active>
+      <name>Teststreifen</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>274</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">72</id>
+      <active type="boolean">true</active>
+      <name>Sonden</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>68</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">67</id>
+      <active type="boolean">true</active>
+      <name>Maulkörbe</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>70</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">62</id>
+      <active type="boolean">true</active>
+      <name>Kennzeichnung</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>109</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">167</id>
+      <active type="boolean">true</active>
+      <name>Naturheilkunde</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>135</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">68</id>
+      <active type="boolean">true</active>
+      <name>Venenstauer</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>25</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">63</id>
+      <active type="boolean">true</active>
+      <name>Bodys</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>152</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">161</id>
+      <active type="boolean">true</active>
+      <name>OP- und Untersuchungshandschuhe</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>330</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">69</id>
+      <active type="boolean">true</active>
+      <name>Kanülen</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>627</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">64</id>
+      <active type="boolean">true</active>
+      <name>Pfotenschutz</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>65</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">85</id>
+      <active type="boolean">true</active>
+      <name>Behandlung</name>
+      <position type="null"/>
+      <parentId type="number">57</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>155</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">233</id>
+      <active type="boolean">false</active>
+      <name>Aktion 2</name>
+      <position type="null"/>
+      <parentId type="number">91</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>12</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">117</id>
+      <active type="boolean">true</active>
+      <name>Schönheit und Pflege</name>
+      <position type="null"/>
+      <parentId type="number">116</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1324</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">182</id>
+      <active type="boolean">true</active>
+      <name>Biozide</name>
+      <position type="null"/>
+      <parentId type="number">123</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>26</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">124</id>
+      <active type="boolean">true</active>
+      <name>Gartenprodukte</name>
+      <position type="null"/>
+      <parentId type="number">123</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>16</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">183</id>
+      <active type="boolean">true</active>
+      <name>Insektizide</name>
+      <position type="null"/>
+      <parentId type="number">123</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>75</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">176</id>
+      <active type="boolean">true</active>
+      <name>Nährböden</name>
+      <position type="null"/>
+      <parentId type="number">125</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>44</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">126</id>
+      <active type="boolean">true</active>
+      <name>Laborausstattung</name>
+      <position type="null"/>
+      <parentId type="number">125</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>593</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">386</id>
+      <active type="boolean">true</active>
+      <name>Hallo Reisezeit! Sind Sie vorbereitet?</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>21</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">394</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm - unser 10. Jubiläumskracher</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">388</id>
+      <active type="boolean">true</active>
+      <name>Draußenzeit = Verletzungszeit Pferd</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>10</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">387</id>
+      <active type="boolean">true</active>
+      <name>Draußenzeit = Verletzungszeit Kleintier</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">389</id>
+      <active type="boolean">false</active>
+      <name>Gestärkte Haut, gepflegtes Fell: Botanica</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>10</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">390</id>
+      <active type="boolean">true</active>
+      <name>Statt Shampoo: unser Jubiläumskracher Purexan</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">384</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm – Advantix Spot on – wenn’s den Hund juckt</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">391</id>
+      <active type="boolean">true</active>
+      <name>40 Jahre ReboPharm - unser 12. Jubiläumskracher</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">398</id>
+      <active type="boolean">true</active>
+      <name>Darmflora in Balance</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">393</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm - unser 11. Jubiläumskracher</name>
+      <position type="null"/>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">375</id>
+      <active type="boolean">false</active>
+      <name>Eigenschutz: Sicherheit geht vor! </name>
+      <position type="number">0</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>25</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">383</id>
+      <active type="boolean">true</active>
+      <name>Jetzt gewinnen -  mit Ostereiern, Hasen, Ostergras &amp; Co.</name>
+      <position type="number">1</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">376</id>
+      <active type="boolean">false</active>
+      <name>Jubiläumskracher: Rundumschutz beim Röntgen</name>
+      <position type="number">2</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">378</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm – Mit FeliGum® Gingiva für gesundes Zahnfleisch</name>
+      <position type="number">3</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">379</id>
+      <active type="boolean">true</active>
+      <name>Jetzt ist wieder Zeckenzeit!</name>
+      <position type="number">4</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">380</id>
+      <active type="boolean">true</active>
+      <name>Schutz gegen fliegende Plagegeister</name>
+      <position type="number">5</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">381</id>
+      <active type="boolean">true</active>
+      <name>Bunt, bunt, bunt sind alle meine Kleider!</name>
+      <position type="number">6</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>158</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">382</id>
+      <active type="boolean">false</active>
+      <name>Jubiläumskracher: Zecken und Flöhe</name>
+      <position type="number">7</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">371</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm – unser 5. Jubiläumskracher</name>
+      <position type="number">8</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">366</id>
+      <active type="boolean">false</active>
+      <name>Alleskönner Catgut: reißfest &amp; resorbierbar</name>
+      <position type="number">9</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>27</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">358</id>
+      <active type="boolean">false</active>
+      <name>Einmalkleidung: sicherer und praktischer Helfer</name>
+      <position type="number">10</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">356</id>
+      <active type="boolean">false</active>
+      <name>Gesunde Stute – erfolgreiche Zucht</name>
+      <position type="number">11</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>8</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">347</id>
+      <active type="boolean">false</active>
+      <name>Infusionen: vielseitig einsetzbar</name>
+      <position type="number">12</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>13</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">344</id>
+      <active type="boolean">false</active>
+      <name>Kampf den Keimen</name>
+      <position type="number">13</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>22</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">225</id>
+      <active type="boolean">true</active>
+      <name>Lagerverkauf</name>
+      <position type="number">14</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>263</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">359</id>
+      <active type="boolean">false</active>
+      <name>Moderner Wundverschluss</name>
+      <position type="number">15</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>19</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">355</id>
+      <active type="boolean">true</active>
+      <name>Petpointer: immer wissen, wo das Haustier ist!</name>
+      <position type="number">16</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">210</id>
+      <active type="boolean">true</active>
+      <name>Qualitätsmarken</name>
+      <position type="number">17</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>23</childrenCount>
+      <articleCount>126</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">337</id>
+      <active type="boolean">false</active>
+      <name>Kurzläufer</name>
+      <position type="number">18</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">341</id>
+      <active type="boolean">false</active>
+      <name>ReboPlus: jetzt doppelt punkten!</name>
+      <position type="number">19</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">350</id>
+      <active type="boolean">false</active>
+      <name>ReboPlus: Doppelt hält besser!</name>
+      <position type="number">20</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>15</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">357</id>
+      <active type="boolean">false</active>
+      <name>Hunde: rundum gesund – mit Enzymen!</name>
+      <position type="number">21</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">363</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm – 40 Jubiläumswochen</name>
+      <position type="number">22</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">365</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm – 40 Jubiläumswoche</name>
+      <position type="number">23</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">370</id>
+      <active type="boolean">false</active>
+      <name>40 Jahre ReboPharm – unser 4. Jubiläumskracher</name>
+      <position type="number">24</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>12</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">292</id>
+      <active type="boolean">false</active>
+      <name>Hypothermie: Gefahr vermeiden</name>
+      <position type="number">25</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">293</id>
+      <active type="boolean">false</active>
+      <name>Labor: Selber machen</name>
+      <position type="number">26</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">294</id>
+      <active type="boolean">false</active>
+      <name>Schutzschild Immunsystem</name>
+      <position type="number">27</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">295</id>
+      <active type="boolean">false</active>
+      <name>Gesunder Darm, gesundes Pferd</name>
+      <position type="number">28</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">308</id>
+      <active type="boolean">false</active>
+      <name>Vorsorge: Glaukom frühzeitig erkennen</name>
+      <position type="number">29</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">309</id>
+      <active type="boolean">false</active>
+      <name>Beatmungs-Spätfolgen vermeiden</name>
+      <position type="number">30</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">312</id>
+      <active type="boolean">false</active>
+      <name>Black Friday</name>
+      <position type="number">31</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>221</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">313</id>
+      <active type="boolean">false</active>
+      <name>Winterschutz für empfindliche Pfoten</name>
+      <position type="number">32</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>23</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">314</id>
+      <active type="boolean">false</active>
+      <name>Universaler Helfer im Praxisalltag</name>
+      <position type="number">33</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">318</id>
+      <active type="boolean">false</active>
+      <name>Adventskalender</name>
+      <position type="number">34</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>21</childrenCount>
+      <articleCount>53</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">272</id>
+      <active type="boolean">false</active>
+      <name>Ohr frei</name>
+      <position type="number">35</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">273</id>
+      <active type="boolean">false</active>
+      <name>Fit im Sommer</name>
+      <position type="number">36</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">274</id>
+      <active type="boolean">false</active>
+      <name>Einmal mehr geschützt</name>
+      <position type="number">37</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>17</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">275</id>
+      <active type="boolean">false</active>
+      <name>Präziser Eingriff in der Pferdepraxis</name>
+      <position type="number">38</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>8</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">276</id>
+      <active type="boolean">false</active>
+      <name>Präziser Eingriff in der Kleintierpraxis</name>
+      <position type="number">39</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>16</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">278</id>
+      <active type="boolean">false</active>
+      <name>Hände im Fokus</name>
+      <position type="number">40</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">284</id>
+      <active type="boolean">false</active>
+      <name>Störfrei operieren</name>
+      <position type="number">41</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">287</id>
+      <active type="boolean">false</active>
+      <name>Win-win-Situation</name>
+      <position type="number">42</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">241</id>
+      <active type="boolean">false</active>
+      <name>Behandlung mit Komfort</name>
+      <position type="number">43</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>26</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">220</id>
+      <active type="boolean">false</active>
+      <name>Bewegungsfreude</name>
+      <position type="number">44</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>40</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">201</id>
+      <active type="boolean">false</active>
+      <name>Buntes Treiben</name>
+      <position type="number">45</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">208</id>
+      <active type="boolean">false</active>
+      <name>Endoparasiten in der Gemischtpraxis</name>
+      <position type="number">46</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">202</id>
+      <active type="boolean">false</active>
+      <name>Endoparasiten in der Kleintierpraxis</name>
+      <position type="number">47</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">206</id>
+      <active type="boolean">false</active>
+      <name>Endoparasiten in der Pferdepraxis</name>
+      <position type="number">48</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">207</id>
+      <active type="boolean">false</active>
+      <name>Frühlingsgefühle</name>
+      <position type="number">49</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">200</id>
+      <active type="boolean">false</active>
+      <name>Glänzender Auftritt</name>
+      <position type="number">50</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">243</id>
+      <active type="boolean">false</active>
+      <name>In jedem Fall Sicher</name>
+      <position type="number">51</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">227</id>
+      <active type="boolean">false</active>
+      <name>Must-have für die Erstversorgung</name>
+      <position type="number">52</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>13</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">240</id>
+      <active type="boolean">false</active>
+      <name>Natürlich therapieren</name>
+      <position type="number">53</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">229</id>
+      <active type="boolean">false</active>
+      <name>Natürliche Wundtherapie</name>
+      <position type="number">54</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>14</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">218</id>
+      <active type="boolean">false</active>
+      <name>Purer Spaß</name>
+      <position type="number">55</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>24</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">228</id>
+      <active type="boolean">false</active>
+      <name>Störfreie Behandlung</name>
+      <position type="number">56</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>21</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">242</id>
+      <active type="boolean">false</active>
+      <name>Tief Luft holen</name>
+      <position type="number">57</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">230</id>
+      <active type="boolean">false</active>
+      <name>Unfallfrei arbeiten</name>
+      <position type="number">58</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">216</id>
+      <active type="boolean">false</active>
+      <name>Variable Versorgung </name>
+      <position type="number">59</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>28</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">217</id>
+      <active type="boolean">false</active>
+      <name>Variable Versorgung &amp; Zitzenbehandlung</name>
+      <position type="number">60</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>43</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">219</id>
+      <active type="boolean">false</active>
+      <name>Wellness fürs Pferdebein</name>
+      <position type="number">61</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>12</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">198</id>
+      <active type="boolean">false</active>
+      <name>Zecken/Flöhe</name>
+      <position type="number">62</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">285</id>
+      <active type="boolean">false</active>
+      <name>Gesund beginnt im Mund</name>
+      <position type="number">63</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">286</id>
+      <active type="boolean">false</active>
+      <name>Von Kopf bis Huf gesund</name>
+      <position type="number">64</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">133</id>
+      <active type="boolean">false</active>
+      <name>Cut &amp; Tape</name>
+      <position type="number">65</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>29</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">190</id>
+      <active type="boolean">false</active>
+      <name>Nahtmaterial</name>
+      <position type="number">66</position>
+      <parentId type="number">132</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>69</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">146</id>
+      <active type="boolean">true</active>
+      <name>Pflegeprodukte und Hygiene</name>
+      <position type="null"/>
+      <parentId type="number">145</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>437</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">169</id>
+      <active type="boolean">true</active>
+      <name>Zellstoff</name>
+      <position type="null"/>
+      <parentId type="number">168</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>25</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">170</id>
+      <active type="boolean">true</active>
+      <name>Desinfektion</name>
+      <position type="null"/>
+      <parentId type="number">168</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>582</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">186</id>
+      <active type="boolean">true</active>
+      <name>Einwegbekleidung</name>
+      <position type="null"/>
+      <parentId type="number">168</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>134</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">171</id>
+      <active type="boolean">true</active>
+      <name>Sterilisation</name>
+      <position type="null"/>
+      <parentId type="number">168</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>149</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">172</id>
+      <active type="boolean">true</active>
+      <name>Zubehör</name>
+      <position type="null"/>
+      <parentId type="number">168</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>89</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">185</id>
+      <active type="boolean">true</active>
+      <name>Nahrungsergänzungsmittel</name>
+      <position type="null"/>
+      <parentId type="number">184</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>218</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">385</id>
+      <active type="boolean">true</active>
+      <name>Tabletten stressfrei verabreichen</name>
+      <position type="null"/>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">360</id>
+      <active type="boolean">true</active>
+      <name>Haargenaue OP-Vorbereitung</name>
+      <position type="number">0</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">302</id>
+      <active type="boolean">true</active>
+      <name>Jacketz Medical Body</name>
+      <position type="number">1</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>16</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">354</id>
+      <active type="boolean">true</active>
+      <name>Kaninchen: Jetzt mit Eravac impfen!</name>
+      <position type="number">2</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">297</id>
+      <active type="boolean">true</active>
+      <name>Optimale Wundpflege</name>
+      <position type="number">3</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>10</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">300</id>
+      <active type="boolean">true</active>
+      <name>ReboPlus: 1 Euro = 1 Treuepunkt</name>
+      <position type="number">4</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>22</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">343</id>
+      <active type="boolean">true</active>
+      <name>Sicherheit für Samtpfoten</name>
+      <position type="number">5</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">303</id>
+      <active type="boolean">false</active>
+      <name>Bandagen: perfekter Schutz für empfindliche Beine</name>
+      <position type="number">6</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">346</id>
+      <active type="boolean">false</active>
+      <name>Wunddrainage fördert Heilung</name>
+      <position type="number">7</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">305</id>
+      <active type="boolean">false</active>
+      <name>Kümmern Sie sich um sich selbst?</name>
+      <position type="number">8</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>13</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">310</id>
+      <active type="boolean">false</active>
+      <name>Treffen Sie uns in Hannover</name>
+      <position type="number">9</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">317</id>
+      <active type="boolean">false</active>
+      <name>„Einmal werden wir noch wach, heißa dann ist...“</name>
+      <position type="number">10</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">226</id>
+      <active type="boolean">false</active>
+      <name>Bionecteur</name>
+      <position type="number">11</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">236</id>
+      <active type="boolean">false</active>
+      <name>CLIP VEN Sicherheitskanülen</name>
+      <position type="number">12</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>28</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">234</id>
+      <active type="boolean">false</active>
+      <name>Gesund im Mund</name>
+      <position type="number">13</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">221</id>
+      <active type="boolean">false</active>
+      <name>Sensibler Halt &amp; Starke Haltung</name>
+      <position type="number">14</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">195</id>
+      <active type="boolean">false</active>
+      <name>petpointer</name>
+      <position type="number">15</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">196</id>
+      <active type="boolean">false</active>
+      <name>petMAP</name>
+      <position type="number">16</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">223</id>
+      <active type="boolean">false</active>
+      <name>Neu</name>
+      <position type="number">17</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">282</id>
+      <active type="boolean">false</active>
+      <name>Blut mit frischen Farben</name>
+      <position type="number">18</position>
+      <parentId type="number">194</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">299</id>
+      <active type="boolean">true</active>
+      <name>Du bist, was du isst!</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">316</id>
+      <active type="boolean">true</active>
+      <name>2019: Mehr Sicherheit bei Arzneimitteln</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">311</id>
+      <active type="boolean">true</active>
+      <name>Sechs wertvolle Steuertipps zum Jahresende</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">395</id>
+      <active type="boolean">false</active>
+      <name>Neue Variante der RHD: Wie vorbeugen?</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">349</id>
+      <active type="boolean">true</active>
+      <name>Mehr Bewegungsfreiheit!</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">377</id>
+      <active type="boolean">true</active>
+      <name>Chirurgisches Instrumentarium reinigen und pflegen – so geht’s</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">372</id>
+      <active type="boolean">true</active>
+      <name>Wenn das kräftig zubeißen nicht mehr klappt</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">289</id>
+      <active type="boolean">true</active>
+      <name>Perfektes Wundmanagment</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">396</id>
+      <active type="boolean">true</active>
+      <name>Brexit: Konsequenzen für Veterinäre</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">368</id>
+      <active type="boolean">true</active>
+      <name>Seit 700 Jahren bewährt: Catgut</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">397</id>
+      <active type="boolean">true</active>
+      <name>Lahmheit bei Fohlen: schnell handeln!</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">351</id>
+      <active type="boolean">true</active>
+      <name>Enzyme: Kontrollinstanz des Immunsystems</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">342</id>
+      <active type="boolean">true</active>
+      <name>Zeit für gute Vorsätze: Mit Zeitmanagement zum Ziel!</name>
+      <position type="null"/>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">262</id>
+      <active type="boolean">false</active>
+      <name>SET - Die systematische Enzymtherapie</name>
+      <position type="number">1</position>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">263</id>
+      <active type="boolean">true</active>
+      <name>Nein zu okkludierten Kanülen</name>
+      <position type="number">2</position>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">265</id>
+      <active type="boolean">true</active>
+      <name>Reisen mit gutem Gefühl</name>
+      <position type="number">3</position>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">277</id>
+      <active type="boolean">true</active>
+      <name>Keimtaxi Hand</name>
+      <position type="number">4</position>
+      <parentId type="number">197</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">373</id>
+      <active type="boolean">false</active>
+      <name>Zahnstein: nicht nur lästig, sondern ein Gesundheitsproblem</name>
+      <position type="null"/>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">374</id>
+      <active type="boolean">true</active>
+      <name>Kein Zahn besser als ein kranker Zahn?</name>
+      <position type="null"/>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>12</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">296</id>
+      <active type="boolean">true</active>
+      <name>Alltagsheld Mullkompresse</name>
+      <position type="number">0</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">361</id>
+      <active type="boolean">true</active>
+      <name>Dem Husten die rote Karte zeigen</name>
+      <position type="number">1</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">367</id>
+      <active type="boolean">true</active>
+      <name>Gesunder Darm - fittes Tier</name>
+      <position type="number">2</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">362</id>
+      <active type="boolean">true</active>
+      <name>Gesunde Darmflora – starkes Immunsystem</name>
+      <position type="number">3</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">306</id>
+      <active type="boolean">true</active>
+      <name>Gesunder Darm: Wohlbefinden &amp; Leistungsfähigkeit</name>
+      <position type="number">4</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">352</id>
+      <active type="boolean">true</active>
+      <name>Gesunde Leber – fitter Hund!</name>
+      <position type="number">5</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">348</id>
+      <active type="boolean">true</active>
+      <name>Karies &amp; Baktus Paroli bieten</name>
+      <position type="number">6</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>11</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">345</id>
+      <active type="boolean">true</active>
+      <name>Milde Fellpflege von ReboCare</name>
+      <position type="number">7</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">307</id>
+      <active type="boolean">true</active>
+      <name>ReboQuin: Gesundheit und Wohlbefinden fürs Pferd</name>
+      <position type="number">8</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>4</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">353</id>
+      <active type="boolean">false</active>
+      <name>Optimales Tastgefühl mit ReboPharm Gleitgel</name>
+      <position type="number">9</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">369</id>
+      <active type="boolean">false</active>
+      <name>Bewegliche und gesunde Gelenke</name>
+      <position type="number">10</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">231</id>
+      <active type="boolean">false</active>
+      <name>Neues aus der ReboPharm</name>
+      <position type="number">11</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">283</id>
+      <active type="boolean">false</active>
+      <name>VMR - Kraft von innen</name>
+      <position type="number">12</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>10</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">315</id>
+      <active type="boolean">false</active>
+      <name>Im OP: Konzentration auf das Wichtigste</name>
+      <position type="number">13</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">238</id>
+      <active type="boolean">false</active>
+      <name>Lückenlos ausgestattet in der Kleintierpraxis</name>
+      <position type="number">14</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">237</id>
+      <active type="boolean">false</active>
+      <name>Lückenlos ausgestattet in der Pferdepraxis</name>
+      <position type="number">15</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">214</id>
+      <active type="boolean">false</active>
+      <name>Ein sicheres Gefühl</name>
+      <position type="number">16</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>7</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">212</id>
+      <active type="boolean">false</active>
+      <name>Ergänzungsfutter- und Pflegemittel</name>
+      <position type="number">17</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">211</id>
+      <active type="boolean">false</active>
+      <name>Pferdezahnzangen</name>
+      <position type="number">18</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">224</id>
+      <active type="boolean">false</active>
+      <name>Rebohexan </name>
+      <position type="number">19</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">215</id>
+      <active type="boolean">false</active>
+      <name>Wunderbare Wundheilung</name>
+      <position type="number">20</position>
+      <parentId type="number">210</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">254</id>
+      <active type="boolean">true</active>
+      <name>Zu Ihrem Schutz</name>
+      <position type="number">0</position>
+      <parentId type="number">244</parentId>
+      <mediaId type="null"/>
+      <childrenCount>11</childrenCount>
+      <articleCount>117</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">280</id>
+      <active type="boolean">true</active>
+      <name>Arbeitsunterlagen Z+ B+</name>
+      <position type="number">0</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">281</id>
+      <active type="boolean">true</active>
+      <name>Clip Ven Kanülen</name>
+      <position type="number">1</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>28</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">264</id>
+      <active type="boolean">true</active>
+      <name>Fit durch gute Haltung</name>
+      <position type="number">2</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">256</id>
+      <active type="boolean">true</active>
+      <name>Kanüleneimer</name>
+      <position type="number">3</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>8</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">257</id>
+      <active type="boolean">true</active>
+      <name>Mustergültig geschützt</name>
+      <position type="number">4</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>31</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">259</id>
+      <active type="boolean">true</active>
+      <name>Samtweiche Hände</name>
+      <position type="number">5</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>8</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">266</id>
+      <active type="boolean">true</active>
+      <name>Sicherer Umgang mit Zytostatika</name>
+      <position type="number">5</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">279</id>
+      <active type="boolean">true</active>
+      <name>Schutzhandschuhe</name>
+      <position type="number">7</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>5</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">258</id>
+      <active type="boolean">true</active>
+      <name>Stress lass nach</name>
+      <position type="number">8</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>20</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">260</id>
+      <active type="boolean">true</active>
+      <name>In jedem Fall sicher</name>
+      <position type="number">9</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">261</id>
+      <active type="boolean">false</active>
+      <name>Gute Haltung – Schmerz adé</name>
+      <position type="number">10</position>
+      <parentId type="number">254</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>6</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">319</id>
+      <active type="boolean">false</active>
+      <name>Tor 1: Eimalschürzen</name>
+      <position type="number">0</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">328</id>
+      <active type="boolean">false</active>
+      <name>Tor 2: Adaptil Express &amp; Adaptil Calm</name>
+      <position type="number">1</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">320</id>
+      <active type="boolean">false</active>
+      <name>Tor 3: Favorita Scherköpfe</name>
+      <position type="number">2</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">321</id>
+      <active type="boolean">false</active>
+      <name>Tor 4: Micro-Kanülen</name>
+      <position type="number">3</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">322</id>
+      <active type="boolean">false</active>
+      <name>Tor 5: Clic Collar </name>
+      <position type="number">4</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>9</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">329</id>
+      <active type="boolean">false</active>
+      <name>Tor 7: Rebohexan Gel</name>
+      <position type="number">5</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">330</id>
+      <active type="boolean">false</active>
+      <name>Tor 8: Luninaletten</name>
+      <position type="number">6</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">338</id>
+      <active type="boolean">false</active>
+      <name>Tor 9: Video</name>
+      <position type="number">7</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">323</id>
+      <active type="boolean">false</active>
+      <name>Tor 10: Surgicryl Nadel-Faden Kombinationen</name>
+      <position type="number">8</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>18</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">331</id>
+      <active type="boolean">false</active>
+      <name>Tor 11: Feligum</name>
+      <position type="number">9</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">332</id>
+      <active type="boolean">false</active>
+      <name>Tor 12: Praxishocker ZWEEZI</name>
+      <position type="number">10</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">333</id>
+      <active type="boolean">false</active>
+      <name>Tor 13: Metzenbaumschere</name>
+      <position type="number">11</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">324</id>
+      <active type="boolean">false</active>
+      <name>Tor 15: Galastop</name>
+      <position type="number">12</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">339</id>
+      <active type="boolean">false</active>
+      <name>Tor 16: Video</name>
+      <position type="number">13</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">334</id>
+      <active type="boolean">true</active>
+      <name>Tor 17: PetPointer</name>
+      <position type="number">14</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">325</id>
+      <active type="boolean">false</active>
+      <name>Tor 18: Feliway</name>
+      <position type="number">15</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">335</id>
+      <active type="boolean">false</active>
+      <name>Tor 19: Purirox</name>
+      <position type="number">16</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">326</id>
+      <active type="boolean">false</active>
+      <name>Tor 20: OrganicVet Aktion</name>
+      <position type="number">17</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>2</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">336</id>
+      <active type="boolean">false</active>
+      <name>Tor 21: Schluckfix-Kanülensammler</name>
+      <position type="number">18</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>1</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">327</id>
+      <active type="boolean">false</active>
+      <name>Tor 22: Cardalis</name>
+      <position type="number">19</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>3</articleCount>
+    </_>
+    <_ type="object">
+      <id type="number">340</id>
+      <active type="boolean">false</active>
+      <name>Tor 23: Video</name>
+      <position type="number">20</position>
+      <parentId type="number">318</parentId>
+      <mediaId type="null"/>
+      <childrenCount>0</childrenCount>
+      <articleCount>0</articleCount>
+    </_>
+  </data>
+  <total type="number">322</total>
+  <success type="boolean">true</success>
+</json>
