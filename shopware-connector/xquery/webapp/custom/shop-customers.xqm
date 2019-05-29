@@ -1,13 +1,14 @@
 module namespace _= "custom/shop/shop-customers";
 
-import module namespace functx = "http://www.functx.com";
-import module namespace conf = "pim/config";
-import module namespace shop = "custom/shop/config";
+import module namespace functx = "http://www.functx.com" at "../../repo/functx/functx-1.0-nodoc-2007-01.xq";
+import module namespace conf = "pim/config" at "../../repo/pim/config.xqm";
+import module namespace shop = "custom/shop/config" at "../../repo/custom/shop/config.xqm";
 
 import module namespace common = "custom/shop/shop-common" at "shop-common.xqm";
-import module namespace prices = "custom/shop/shop-prices" at "shop-prices.xqm";
 
-import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper';
+import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper' at "../../repo/java/HTTPWrapper.xqm";
+
+import module namespace admin = "admin/log" at "../../repo/admin/log.xqm";
 
 declare variable $_:FILE-CUSTOMERS := file:resolve-path($conf:DATA_ROOT ||'/External/Shopware/customers.xml');
 declare variable $_:FILE-ADDRESSES := file:resolve-path($conf:DATA_ROOT ||'/External/Shopware/addresses.xml');
@@ -47,6 +48,10 @@ function _:get-bonus-customers(){
 };
 
 
+
+(: ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        znd, COMMENTED OUT, USES XSLT
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 declare 
   %rest:GET
@@ -188,7 +193,7 @@ function _:get-new-customers(){
   
   (: put new to ftp :)
    return common:ftp-relative-up('customers', 'new-customers.csv')
-};
+}; :)
 
 declare
   %rest:GET
@@ -236,7 +241,7 @@ declare
   %rest:GET
   %rest:path("/shop/customers/update")
   %rest:query-param("number", "{$number}", "")
-  %rest:single
+  (: %rest:single :)
 function _:update-customers($number) {
     let $test-run := false()
     
@@ -246,16 +251,16 @@ function _:update-customers($number) {
     
     let $forceUpdate := false()
     
-    let $customers := db:open($common:ERP-DB, $common:ERP-DB-FILE)
+    let $customers := fn:doc($common:ERP-DB || '/' || $common:ERP-DB-FILE)
     let $oldCustomers := (# basex:non-deterministic #) { _:customers()/json/data/_ }
     
-    let $specialPrices := db:open($common:ERP-USERPRICE-DB, $common:ERP-USERPRICE-DB-FILE)
+    let $specialPrices := fn:doc($common:ERP-USERPRICE-DB || '/' || $common:ERP-USERPRICE-DB-FILE)
     let $specialPriceCustomers := (# basex:non-deterministic #) { distinct-values($specialPrices//userprice/addressnumber/text()) }
     
-    let $priceGroups := prices:groups()
+    let $priceGroups := _:price-groups()
     let $groupMap := map:merge(
         for $ind in (1 to 9)
-        let $group := prices:groups()//_[name = concat('Vk', $ind)]
+        let $group := $priceGroups//_[name = concat('Vk', $ind)]
         return if (empty($group)) then () else map:entry(string($ind), $group/id/text())
     )
     
@@ -310,7 +315,7 @@ function _:update-customers($number) {
         where _:is-main-customer($customer) and not(empty($oldSparseCustomer)) and 
             (_:recently-updated(common:date-convert($customer/lastChange/text(), current-dateTime()))
                 or (_:hash-customer($oldSparseCustomer[1], false()) != _:hash-customer($newCustomer, $forceUpdate)) )
-        return _:change-customer($newCustomer update { insert node _:determine-specialPriceGroup($customer/priceGroupId, $groupMap) into ./attribute },
+        return _:change-customer($newCustomer transform with { insert node _:determine-specialPriceGroup($customer/priceGroupId, $groupMap) into ./attribute },
                                     $oldSparseCustomer/id/text(), true(), $test-run)
             
     }</updateCustomers> }
@@ -376,7 +381,15 @@ function _:update-customers($number) {
             let $oldAddresses := $addresses[attribute/addressNumber = $newCustomer/number/text()]
              let $x3-1 := admin:write-log("Customer (new / old addr empty): " || $newCustomer/number || " / "  || empty($oldAddresses), "INFO")
             where empty($oldAddresses)
-            return _:upload-customer($newCustomer update { insert node _:determine-specialPriceGroup($customer/priceGroupId, $groupMap) into ./attribute }, $test-run)
+            return 
+            let $newCustomer1 := (
+              copy $newCustomer1 := $newCustomer
+              modify insert node _:determine-specialPriceGroup($customer/priceGroupId, $groupMap) into newCustomer1/attribute
+              return
+              $newCustomer1
+            )
+            return
+            _:upload-customer($newCustomer1, $test-run)
             
     }</uploadCustomers> }
     let $x4 := admin:write-log('new customers uploaded')
@@ -421,7 +434,7 @@ declare function _:change-customer($newCustomer as element(), $id as xs:string, 
                 then file:write-text($common:ERP-PATH || 'customer_change_' || $newCustomer/number || '.json', $json)
                 else HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-CUSTOMERS || $newCustomer/number, '?useNumberAsId=true'), shop:user(), shop:pwd(), $json)
             return try {
-                let $newUpload := json:parse($updateResult)
+                let $newUpload := $updateResult
                 return
                     (<success>{$newUpload/success/text()}</success>,
                     <id>{$newUpload//id/text()}</id>)
@@ -450,7 +463,7 @@ declare function _:upload-customer($newCustomer as element(), $test-run as xs:bo
                 then file:write-text($common:ERP-PATH || 'customer_upload_' || $newCustomer/number || '.json', $json)
                 else HTTPWrapper:postJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-CUSTOMERS, shop:user(), shop:pwd(), $json)
             return try {
-                let $newUpload := json:parse($uploadResult)
+                let $newUpload := $uploadResult
                 return (<success>{$newUpload/success/text()}</success>,
                         $newUpload//id)
             } catch * {
@@ -520,7 +533,7 @@ declare function _:change-address($newAddress as xs:string, $id as xs:string, $t
 declare function _:wrap-address-response($response as xs:string, $type as xs:string, $number as xs:string) as element() {
     <address type="{$type}">{
         try {
-            let $xmlResponse := json:parse($response)
+            let $xmlResponse := fn:parse-json($response)
             return (<success>{$xmlResponse//success/text()}</success>,
                 <id>{$xmlResponse//id/text()}</id>)
         } catch * {
@@ -532,33 +545,36 @@ declare function _:wrap-address-response($response as xs:string, $type as xs:str
 
 
 declare function _:build-new-json-address($address as element(), $customerId as element(), $hash as xs:string) as xs:string {
-    let $newAddress := $address update {
-      insert node <hash>{$hash}</hash> into ./attribute
-    } update {
-      insert node $customerId into .
-    }
+    copy $newAddress := $address
+    modify (
+      insert node <hash>{$hash}</hash> into $newAddress/attribute,
+      insert node $customerId into $newAddress
+    )
     return 
-      try{ json:serialize(<json numbers="mainNumber country customer axxIsShipping" objects="json attribute">{$newAddress/*}</json>) } 
+      try{ fn:serialize(<json numbers="mainNumber country customer axxIsShipping" objects="json attribute">{$newAddress/*}</json>, map{'method':'json'}) } 
       catch * {  
         let $err := 'JSON address failed for ' || $newAddress || ' details: ' || $err:description
         let $msg := admin:write-log('JSON address failed for ' || $newAddress || ' details: ' || $err:description, 'ERROR')
-        return error($err)
+        return error(xs:QName('error'), $err)
       }
 };
 
 
 (: build json from erp data for upload to shopware :)
 declare function _:build-new-json-customer($newCustomer as element(), $insertHashes as xs:boolean) as xs:string {
-    let $custom := if ($insertHashes) then (
-        $newCustomer update {
-          insert node <hash>{_:hash-address(./billing)}</hash> into ./billing/attribute
-        } update {
-          insert node <hash>{_:hash-address(./shipping)}</hash> into ./shipping/attribute
-        }
-    ) else ($newCustomer)
+  copy $custom := $newCustomer
+  modify (
+    if ($insertHashes) then 
+      (
+        insert node <hash>{_:hash-address($custom/billing)}</hash> into $custom/billing/attribute,
+        insert node <hash>{_:hash-address($custom/shipping)}</hash> into $custom/shipping/attribute
+      )
+    else
+      $custom
+  )
     return 
     
-       try { json:serialize(<json booleans="active" numbers="mainNumber sfxHideAddressDropdown country paymentId axxIsShipping swagPricegroup" objects="json shipping billing attribute">{$custom/*}</json>) }
+       try { fn:serialize(<json booleans="active" numbers="mainNumber sfxHideAddressDropdown country paymentId axxIsShipping swagPricegroup" objects="json shipping billing attribute">{$custom/*}</json>, map{'method':'json'}) }
         catch * {  admin:write-log('JSON customer failed for ' || $newCustomer || ' details: ' || $err:description, 'ERROR') }
 };  
 
@@ -573,87 +589,60 @@ declare function _:is-main-customer($customer as element()) {
 
 declare function _:build-customer($customer as element(), $singleAddress as element()) as element() {
     let $mainNumber := _:identify-main-number($customer/number, $customer/billing/attribute/addressNumber/text())
-    return $customer update {
-      replace value of node ./number with $mainNumber
-    } update {
-      replace value of node ./email with _:fill-email(./email, $mainNumber)
-    } update {
-       delete node ./priceGroupId
-    } update {
-      delete node status
-    } update {
-       delete node ./lastChange
-    } update {
-      delete node shopAddress
-    } update {
-      delete node ./oneAddress
-    } update {
-       insert node <groupKey>{_:determine-group(./pharmacyCertificate, ./wholesaleAllowance, ./tradeLicence, ./competencyCertificate, ./attribute/sfxBonusProgram)}</groupKey> into .
-    } update {
-      if (empty(./attribute/sfxBonusProgram)) then () else
-      delete node ./attribute/sfxBonusProgram
-    } update {
-       insert node $singleAddress into ./attribute
-    } update {
-       delete node ./pharmacyCertificate
-    } update {
-       delete node ./wholesaleAllowance
-    } update {
-       delete node ./tradeLicence
-    } update {
-       delete node ./competencyCertificate
-    } update {
-      replace value of node ./paymentId with _:determine-payment(./paymentId)
-    } update {
-       replace value of node ./active with _:resolve-active-status(./active)
-    } update {
-      replace value of node ./salutation with _:extract-salutation(./salutation, false())
-    } update {
-      replace value of node ./firstname with _:empty-replacement(./firstname)
-    } update {
-      replace value of node ./lastname with _:empty-replacement(./lastname)
-    } update {
-      replace value of node ./shipping/country with common:country-transform(./shipping/country)
-    } update {
-      replace value of node ./billing/country with common:country-transform(./billing/country)
-    } update {
-      replace value of node ./shipping/salutation with _:extract-salutation(./shipping/salutation, true())
-    } update {
-      replace value of node ./billing/salutation with _:extract-salutation(./billing/salutation, true())
-    } update {
-      replace value of node ./shipping/firstname with _:empty-replacement(./shipping/firstname)
-    } update {
-      replace value of node ./shipping/lastname with _:empty-replacement(./shipping/lastname)
-    } update {
-      replace value of node ./billing/firstname with _:empty-replacement(./billing/firstname)
-    } update {
-      replace value of node ./billing/lastname with _:empty-replacement(./billing/lastname)
-    } update {
-      replace value of node ./billing/phone with _:empty-replacement(./billing/phone)
-    } update {
-      replace value of node ./shipping/phone with _:empty-replacement(./shipping/phone)
-    } update {
-      replace value of node ./billing/attribute/mainNumber with $mainNumber
-    } update {
-      replace value of node ./shipping/attribute/mainNumber with $mainNumber
-    } update {
-      insert node <axxIsShipping>0</axxIsShipping> into ./billing/attribute
-    } update {
-      insert node <axxIsShipping>1</axxIsShipping> into ./shipping/attribute
-    }
+    return
+    copy $o := $customer
+    modify
+    (
+       replace value of node $o/number with $mainNumber
+      ,replace value of node $o/email with _:fill-email($o/email, $mainNumber)
+      ,delete node $o/priceGroupId
+      ,delete node $o/status
+      ,delete node $o/lastChange
+      ,delete node $o/shopAddress
+      ,delete node $o/oneAddress
+      ,insert node <groupKey>{_:determine-group($o/pharmacyCertificate, $o/wholesaleAllowance, $o/tradeLicence, $o/competencyCertificate, $o/attribute/sfxBonusProgram)}</groupKey> into $o
+      ,if (empty($o/attribute/sfxBonusProgram)) then () else delete node $o/attribute/sfxBonusProgram
+      ,insert node $singleAddress into $o/attribute
+      ,delete node $o/pharmacyCertificate
+      ,delete node $o/wholesaleAllowance
+      ,delete node $o/tradeLicence
+      ,delete node $o/competencyCertificate
+      ,replace value of node $o/paymentId with _:determine-payment($o/paymentId)
+      ,replace value of node $o/active with _:resolve-active-status($o/active)
+      ,replace value of node $o/salutation with _:extract-salutation($o/salutation, false())
+      ,replace value of node $o/firstname with _:empty-replacement($o/firstname)
+      ,replace value of node $o/lastname with _:empty-replacement($o/lastname)
+      ,replace value of node $o/shipping/country with common:country-transform($o/shipping/country)
+      ,replace value of node $o/billing/country with common:country-transform($o/billing/country)
+      ,replace value of node $o/shipping/salutation with _:extract-salutation($o/shipping/salutation, true())
+      ,replace value of node $o/billing/salutation with _:extract-salutation($o/billing/salutation, true())
+      ,replace value of node $o/shipping/firstname with _:empty-replacement($o/shipping/firstname)
+      ,replace value of node $o/shipping/lastname with _:empty-replacement($o/shipping/lastname)
+      ,replace value of node $o/billing/firstname with _:empty-replacement($o/billing/firstname)
+      ,replace value of node $o/billing/lastname with _:empty-replacement($o/billing/lastname)
+      ,replace value of node $o/billing/phone with _:empty-replacement($o/billing/phone)
+      ,replace value of node $o/shipping/phone with _:empty-replacement($o/shipping/phone)
+      ,replace value of node $o/billing/attribute/mainNumber with $mainNumber
+      ,replace value of node $o/shipping/attribute/mainNumber with $mainNumber
+      ,insert node <axxIsShipping>0</axxIsShipping> into $o/billing/attribute
+      ,insert node <axxIsShipping>1</axxIsShipping> into $o/shipping/attribute
+    )
+    return
+    $o
 };
 
 declare function _:hash-address($address as element()) as xs:string {
-    string(hash:sha1(concat($address/salutation, $address/firstname, $address/lastname,
+  '1'
+    (: string(hash:sha1(concat($address/salutation, $address/firstname, $address/lastname,
         $address/street ,$address/zipCode, $address/city, $address/phone,
-        $address/attribute/mainNumber, $address/attribute/addressNumber, $address/attribute/axxIsShipping)))
+        $address/attribute/mainNumber, $address/attribute/addressNumber, $address/attribute/axxIsShipping))) :)
 };
 
 declare function _:hash-customer($customer as element(), $force as xs:boolean) as xs:string {
     (: random:uuid() :) (: force update :)
-    if ($force) then '0' else (    
-        string(hash:sha1(concat( $customer/active/text(), $customer/email, $customer/salutation,
-        $customer/title, $customer/firstname, $customer/lastname, $customer/groupKey, $customer/paymentId)))
+    if ($force) then '0' else (    '1'
+        (: string(hash:sha1(concat( $customer/active/text(), $customer/email, $customer/salutation,
+        $customer/title, $customer/firstname, $customer/lastname, $customer/groupKey, $customer/paymentId))) :)
     )
 };
 
@@ -720,7 +709,7 @@ declare
   %rest:GET
   %rest:path("/shop/customers/check")
 function _:check-customers-addresses() {
-    let $data := db:open($common:ERP-DB, $common:ERP-DB-FILE)
+    let $data := fn:doc($common:ERP-DB || '/' || $common:ERP-DB-FILE)
     return <addequl>{
     for $c in $data//customer
     return if( ((empty($c/shipping/firstname/text()) and empty($c/billing/firstname/text())) or ($c/shipping/firstname/text() = $c/billing/firstname/text()))
@@ -800,3 +789,7 @@ function _:create-customers-report() {
 </html>
 };
 
+(: Copied from shop-prices.xqm to avoid cyclic import :)
+declare function _:price-groups() as item() {
+    common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-GROUPS, '?limit=500000'))
+};

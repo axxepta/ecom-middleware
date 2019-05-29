@@ -5,7 +5,7 @@ module namespace _= "pim/config";
 declare variable $_:CATEGORY_TREE_TITLE := "";
 declare variable $_:FEATURE_TYPES := ['String', 'Boolean', 'Select'];
 declare variable $_:DEFAULT_LANG := "de";
-declare variable $_:DATA_ROOT := "/Syncrovet/Syncrovet3.Data/";
+declare variable $_:DATA_ROOT := "./Syncrovet/Syncrovet3.Data/";
 
 declare variable $_:COLLECTION_TO_TYPE := map{
     "categories"    : "Category",
@@ -41,7 +41,7 @@ declare function _:lang-or-default($lang as xs:string?){
 };
 
 declare function _:data-path-for($collection as xs:string, $purpose as xs:string){
- 
+  (: let $coll := $_:COLLECTION_TO_DATAPATH :)
   let $path := file:resolve-path($_:COLLECTION_TO_DATAPATH($collection) || $purpose || "/")
   return $path
  

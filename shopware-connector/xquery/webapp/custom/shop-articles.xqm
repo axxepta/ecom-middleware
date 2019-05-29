@@ -1,13 +1,14 @@
 module namespace _= "custom/shop/shop-articles";
 
-import module namespace functx = "http://www.functx.com";
-import module namespace conf = "pim/config";
-import module namespace shop = "custom/shop/config";
+import module namespace functx = "http://www.functx.com" at "../../repo/functx/functx-1.0-nodoc-2007-01.xq";
+import module namespace conf = "pim/config" at "../../repo/pim/config.xqm";
+import module namespace shop = "custom/shop/config" at "../../repo/custom/shop/config.xqm";
 
-import module namespace shop-customers = "custom/shop/shop-customers" at "shop-customers.xqm";
 import module namespace common = "custom/shop/shop-common" at "shop-common.xqm";
 
-import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper';
+import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper' at "../../repo/java/HTTPWrapper.xqm";
+
+import module namespace admin = "admin/log" at "../../repo/admin/log.xqm";
 
 declare variable $_:NO_SHIPPING := 'Defekt';
 
@@ -17,7 +18,7 @@ declare
 function _:clear-caches() as element()* {
     let $delete := HTTPWrapper:delete(shop:protocol(), shop:host(), shop:port(), $shop:PATH-CACHES, shop:user(), shop:pwd())
     return try {
-        <cache>{json:parse($delete)}</cache>
+        <cache>{fn:parse-json($delete)}</cache>
     } catch * {
         <failed>{$delete}</failed>
     }
@@ -39,11 +40,12 @@ declare
   %rest:path("/shop/variants")
 function _:variants() as item() {
     let $limit := 2000
-    let $number := common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-VARIANTS, '?limit=1'))/json/total/string()
-    return <json type="object"><data type="array">{
-        for $looper in (1 to xs:int(ceiling(xs:int($number) div $limit)))
-        return common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-VARIANTS, '?limit=' || $limit || '&amp;start=' || ($looper - 1) * $limit ))/json/data/_
-    }</data></json>
+    let $number := common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-VARIANTS, '?limit=1'))('total')
+    return 
+    array {
+      for $looper in (1 to xs:int(ceiling(xs:int($number) div $limit)))
+      return common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-VARIANTS, '?limit=' || $limit || '&amp;start=' || ($looper - 1) * $limit ))
+    }
 };
 
 declare function _:variants($params as xs:string) as item() {
@@ -59,11 +61,11 @@ function _:media() as item() {
 
 declare function _:media-album($filter as xs:string) as item() {
     let $limit := 2000
-    let $number := common:get-request(shop:protocol(), shop:host(), shop:port(), $shop:PATH-MEDIA || '?limit=1&amp;' || $filter)/json/total/string()
-    return <json type="object"><data type="array">{
+    let $number := common:get-request(shop:protocol(), shop:host(), shop:port(), $shop:PATH-MEDIA || '?limit=1&amp;' || $filter)('total')
+    return array {
         for $looper in (1 to xs:int(ceiling(xs:int($number) div $limit)))
-        return common:get-request(shop:protocol(), shop:host(), shop:port(), $shop:PATH-MEDIA || '?' || $filter || '&amp;limit=' || $limit || '&amp;start=' || ($looper - 1) * $limit)/json/data/_
-    }</data></json>
+        return common:get-request(shop:protocol(), shop:host(), shop:port(), $shop:PATH-MEDIA || '?' || $filter || '&amp;limit=' || $limit || '&amp;start=' || ($looper - 1) * $limit)
+    }
 };
 
 declare
@@ -85,7 +87,7 @@ declare
   %rest:path("/shop/categories/{$name}/{$parent-id}")
 function _:new-category($name as xs:string, $parent-id as xs:string) as item() {
     let $content := '{ "parentId" : ' || $parent-id || ', "name" : "' || $name || '"}'       
-    return common:post-request(shop:protocol(), shop:host(), shop:port(), $shop:PATH-CATEGORIES, $content)/json/data/id/text()
+    return common:post-request(shop:protocol(), shop:host(), shop:port(), $shop:PATH-CATEGORIES, $content)('id')
 };
 
 declare
@@ -100,26 +102,26 @@ declare
   %rest:path("/shop/articles/delete")
 function _:delete-articles() {
     let $articles := _:articles()
-    let $articleDelete := <json arrays="json" objects="_">{
-        for $article in $articles//data/_
-        return <_>{$article/id}</_>
-    }</json>
-    let $ids := string-join($articleDelete/_/id/text(), ',')
-    let $json := json:serialize($articleDelete)
+    
+    let $articleDelete := $articles?id
+    
+    let $ids := string-join($articleDelete, ',')
+    let $json := fn:serialize($articleDelete, map{'method':'json'})
     let $upload := HTTPWrapper:delete(shop:protocol(), shop:host(), xs:int(shop:port()), $shop:PATH-ARTICLES, shop:user(), shop:pwd(), $json)
     return try {
-        json:parse($upload)
+        fn:parse-json($upload)
     } catch * {
         <failed>{$upload}</failed>
     }
 };
 
 
-declare function _:filter-get($f as function(xs:string) as item(),
+declare function _:filter-get(
+        $f as function(xs:string) as item(),
         $numbers as xs:string*,
         $useNumberAsId as xs:boolean,
         $filterProperty as xs:string
-) as element()* {
+) as item()* {
     let $size := 75
     for $batch in 1 to xs:integer(ceiling(count($numbers) div $size))
     let $filterValues := for $number at $pos in subsequence($numbers, $size * ($batch - 1) + 1, $size)
@@ -129,7 +131,8 @@ declare function _:filter-get($f as function(xs:string) as item(),
         string-join($filterValues, '&amp;')
     )
     (: return concat($queryString, '&#10;') :)
-    return ($f($queryString))//_
+    return 
+      ($f($queryString))('data')?*
 };
 
 
@@ -143,20 +146,44 @@ function _:delete-section-articles($id as xs:integer) {
     let $oldVariants := _:filter-get(_:variants(?), $articles/ProductInfo/ProductItem/SupplierArticleId/text(), true(), 'number')
     let $oldArticles := _:filter-get(_:articles(?), $articles/ProductInfo/ProductItem/SupplierArticleId/text(), true(), 'mainDetail.number')
     let $oldArticleIds := distinct-values(($oldVariants/articleId/text(), $oldArticles/id/text()))
-    let $articleDelete := <json arrays="json" objects="_">{
-        for $oldId in $oldArticleIds
-        return <_><id>{$oldId}</id></_>
-    }</json>
-    let $ids := string-join($articleDelete/_/id/text(), ',')
-    let $json := json:serialize($articleDelete)
+    let $articleDelete := array {$oldArticleIds}
+    let $ids := string-join($oldArticleIds, ',')
+    let $json := fn:serialize($articleDelete, map{'method':'json'})
     let $upload := HTTPWrapper:delete(shop:protocol(), shop:host(), xs:int(shop:port()), $shop:PATH-ARTICLES, shop:user(), shop:pwd(), $json)
     return try {
-        json:parse($upload)
+        fn:parse-json($upload)
     } catch * {
         <failed>{$upload}</failed>
     }
 };
 
+declare function _:get-unrestricted-categories($categoryArray)
+{
+  let $categorySequence := $categoryArray?*
+  let $praxisId := 5
+  let $petShopId := 24
+  let $pflegeHygieneId := 145
+  let $diaetErgaenzungId := 30
+  let $qualitaetId := 210
+  
+  let $praxisChildren := fn:filter($categorySequence,
+                          function($map){
+                            let $p := $map('parentId')
+                            return
+                            if (empty($p)) then false()
+                            else $p eq $praxisId
+                          })
+  let $allPar := ($praxisChildren?id, $petShopId, $pflegeHygieneId, $diaetErgaenzungId, $qualitaetId)
+  let $unrest := fn:filter($categorySequence,
+                          function($map){
+                            let $p := $map('parentId')
+                            return
+                            if (empty($p)) then false()
+                            else $p = $allPar
+                          })
+  return
+  fn:distinct-values($unrest?id)
+};
 
 declare
   %rest:GET
@@ -166,136 +193,142 @@ function _:upload-articles() {
  _:upload-articles-by-section(())
 };
 
-
 declare
   %rest:GET
   %rest:path("/shop/articles/uploadsection/{$id}")
-  %rest:single
+  (: %rest:single :)
 function _:upload-articles-by-section($id as xs:string?) {
-    let $test-run := false()
+  let $test-run := false()
     
-    let $delete-media-assignments := false() (: remove all media assignments from articles :)
+  let $delete-media-assignments := false() (: remove all media assignments from articles :)
     
-    let $log := admin:write-log('START ARTICLES UPLOAD')
+  let $log := admin:write-log('START ARTICLES UPLOAD')
         
-    return try {
+  return 
+  try {
+    let $media := _:media-album(_:image-filter())?*
+    let $downloads := _:media-album(_:download-filter())?*
         
-        let $media := _:media-album(_:image-filter())//data/_
-        let $downloads := _:media-album(_:download-filter())//data/_
+    let $restrictedGroupId := <id>9</id> (:shop-customers:customerGroups()/json/data/_[key = 'IK']/id :)
         
-        let $restrictedGroupId := <id>9</id> (:shop-customers:customerGroups()/json/data/_[key = 'IK']/id :)
+    let $shopCategories := json-doc('../../../data/shop/categories.json')('data') (: _:categories()/json/data/_ :)
+    (: categories visible for IK customers :)
+    let $unrestrictedCategoryIds := _:get-unrestricted-categories($shopCategories)
         
-        let $shopCategories := doc('../../../data/shop/categories.xml')/json/data (: _:categories()/json/data/_ :)
-        let $praxisId := '5'
-        let $petShopId := '24'
-        let $pflegeHygieneId := '145'
-        let $diaetErgaenzungId := '30'
-        let $qualitaetId := '210'
-        (: categories visible for IK customers :)
-        let $unrestrictedCategoryIds := ($shopCategories[parentId = ($shopCategories[parentId = $praxisId]/id/text())]/id/text(),
-                                    $shopCategories[parentId = $petShopId]/id/text(), 
-                                    $shopCategories[parentId = $pflegeHygieneId]/id/text(),
-                                    $shopCategories[parentId = $diaetErgaenzungId]/id/text(),
-                                    $shopCategories[parentId = $qualitaetId]/id/text()
-                                    )
+    let $propertyDef := json-doc('../../../data/shop/properties.json') (:  _:properties() :)
         
-        let $propertyDef := doc('../../../data/shop/properties.xml') (:  _:properties() :)
+    let $log1 := admin:write-log('article upload started')
         
-        let $log1 := admin:write-log('article upload started')
+    let $all-sections := fn:parse-xml(file:read-text('data/articles/webshop.xml'))/Sections//Section 
+                        (: common:pim-get( '/pim/api/publications/' || encode-for-uri('Webshop.xml') || '/sections' )/Sections/Section :)
+    let $sections := if(empty($id)) then $all-sections else $all-sections[@Guid = $id]
         
-        let $all-sections := doc('../../../data/articles/webshop.xml')/Sections/Section (: common:pim-get( '/pim/api/publications/' || encode-for-uri('Webshop.xml') || '/sections' )/Sections/Section :)
-
-        let $sections := if(empty($id)) then $all-sections else $all-sections[@Guid = $id]
+    let $l-s0 :=  admin:write-log('sections: ' || string-join($sections/Title, ', '))
         
-        let $l-s0 :=  admin:write-log('sections: ' || string-join($sections/Title, ', '))
-    
-        let $category-map := map:merge(
-            for $a in $all-sections//ProductItem
-            let $guid := $a/@Guid
-            group by $guid
-            return map:entry($guid, 
-                <categories>{
+    let $shopCatIds := $shopCategories?*?id ! string()
+    let $category-map := (
+      for $a in $all-sections//ProductItem
+      group by 
+        $guid := $a/@Guid
+      return 
+        map:entry($guid, 
+                  array{
                     for $s in $a/parent::*/parent::Section
-                    where $s/ShopCategoryId/text() = $shopCategories/id/text()
-                    return <_><id>{$s/ShopCategoryId/text()}</id></_>
-                }</categories>
-            )
-        )
+                    where $s/ShopCategoryId/text() = $shopCatIds
+                    return $s/ShopCategoryId/data()
+                  }
+                 )
+      ) => map:merge()
+    let $write-log := file:write-text($common:WEBSHOP-LOG, ?)
+    let $null := <webshopCategories>{
+                  for $c in $all-sections
+                  where 
+                    not($c/ShopCategoryId/text() = $shopCatIds)
+                  return 
+                    <notValid>{($c/Title, $c/ShopCategoryId)}</notValid>
+                }</webshopCategories> => $write-log()
+                
+    let $prices := doc($common:ERP-PRICE-DB || '/' || $common:ERP-PRICE-DB-FILE)/prices/pricing
+    let $prices-map := map:merge(
+        for $p in $prices
+        return map:entry($p/articlenumber/text(), $p)
+      )
         
-        let $categoryStatus := <webshopCategories>{
-            for $c in $all-sections
-            where not($c/ShopCategoryId/text() = $shopCategories/id/text())
-            return <notValid>{($c/Title, $c/ShopCategoryId)}</notValid>
-        }</webshopCategories>
-        let $webshop-file := file:write($common:WEBSHOP-LOG, $categoryStatus)
+    let $store := doc($common:ERP-STORE-DB || '/' || $common:ERP-STORE-DB-FILE)//article
+    let $store-map := map:merge(
+        for $s in $store
+        return map:entry($s/number/text(), $s)
+      )
         
-        let $prices := db:open($common:ERP-PRICE-DB, $common:ERP-PRICE-DB-FILE)/prices/pricing
-        let $prices-map := map:merge(
-            for $p in $prices
-            return map:entry($p/articlenumber/text(), $p)
-        )
-        
-        let $store := db:open($common:ERP-STORE-DB, $common:ERP-STORE-DB-FILE)//article
-        let $store-map := map:merge(
-            for $s in $store
-            return map:entry($s/number/text(), $s)
-        )
-        
-        let $index := db:open($common:ERP-INDEX-DB, $common:ERP-INDEX-DB-FILE)//article
-        let $index-map := map:merge(
-            for $i in $index
-            return map:entry($i/number/text(), $i/reboSortIndex)
-        )
-        
-        
-        let $articlesUpload := <upload>{
-        (   
-        
-            let $log2 := admin:write-log('maps created')
-            
-            for $section at $sPos in $sections
-            
-            where $section/ProductInfo
-            
-            let $articles := doc('../../../data/articles/section_7a905858-4d33-445f-ae3c-9a96201a5a26.xml')/articles/*  (: common:pim-get( '/pim/api/publications/' || $section/@Guid || '/transformed?pub-type=' || encode-for-uri('Shop') )/articles/* :)
-            
-            return <section title="{string($section/Title)}">{
-            
-                let $articleUpload := <json objects="article mainDetail configuratorSet attribute propertyGroup option _" booleans="active isMain notification lastStock"
-                    arrays="json categories prices variants configuratorOptions groups options images customerGroups propertyValues" numbers="id mediaId tax from price inStock">{
+    let $index := doc($common:ERP-INDEX-DB || '/' || $common:ERP-INDEX-DB-FILE)//article
+    let $index-map := map:merge(
+        for $i in $index
+        return map:entry($i/number/text(), $i/reboSortIndex)
+      )
+
+    let $log2 := admin:write-log('maps created')
+    let $articlesUpload := <upload>{
+      (: znd: adding the date here to avoid an update later :)
+      <dateTime>{current-dateTime()}</dateTime>,
+      (
+        for $section at $sPos in $sections
+        where $section/ProductInfo
+        let $articles := fn:parse-xml(file:read-text('data/articles/section_7a905858-4d33-445f-ae3c-9a96201a5a26.xml'))/articles/*  
+                         (: common:pim-get( '/pim/api/publications/' || $section/@Guid || '/transformed?pub-type=' || encode-for-uri('Shop') )/articles/* :)
+        return 
+          <section title="{string($section/Title)}">{
+            (: <json objects="article mainDetail configuratorSet attribute propertyGroup option _" booleans="active isMain notification lastStock"
+                     arrays="json categories prices variants configuratorOptions groups options images customerGroups propertyValues" numbers="id mediaId tax from price inStock"> :)
+            let $articleUpload := 
+              array {
+                let $oldVariants := _:filter-get(_:variants(?), $articles/ProductInfo/ProductItem/SupplierArticleId/text(), true(), 'number')
+                let $oldArticles := _:filter-get(_:articles(?), $articles/ProductInfo/ProductItem/SupplierArticleId/text(), true(), 'mainDetail.number')
                     
-                    let $oldVariants := _:filter-get(_:variants(?), $articles/ProductInfo/ProductItem/SupplierArticleId/text(), true(), 'number')
-                    let $oldArticles := _:filter-get(_:articles(?), $articles/ProductInfo/ProductItem/SupplierArticleId/text(), true(), 'mainDetail.number')
-                    
-                    for $article in $articles/ProductInfo
-                    let $l-a0 :=  admin:write-log('product: ' || $article/ProductName || ' - '  || $article/@Guid)
+                for $article in $articles/ProductInfo
+
+                let $l-a0 :=  admin:write-log('product: ' || $article/ProductName || ' - '  || $article/@Guid)
                         
-                    let $singleItem := (count($article//ProductItem) = 0)
+                let $singleItem := (count($article//ProductItem) = 0)
     
-                    return for $item at $pos in $article//ProductItem
+                return 
+                  for $item at $pos in $article/ProductItem
                         
-                    let $category := map:get($category-map, $item/@Guid)
-                   (: Any unrestricted works :)
-                    let $unrestrictedCategory := ($category/_/id/text() = $unrestrictedCategoryIds)
+                  let $category := map:get($category-map, $item/@Guid)
+                  (: Any unrestricted works :)
+                  let $unrestrictedCategory := ($category?* = $unrestrictedCategoryIds)
             
-                    return if (empty($category/_) or (empty($id) and ($category/_[1]/id/text() != $section/ShopCategoryId/text()))) then () else (
-                           
-                        let $oldArticleIds := distinct-values(($oldVariants[number = $item/SupplierArticleId/text()]/articleId/text(),
-                            $oldArticles[mainDetailId = $item/SupplierArticleId/text()]/id/text()))
-                        let $oldArticleId := if (empty($oldArticleIds)) then () else (<id>{$oldArticleIds[1]}</id>)
+                  return 
+                    if ( empty($category?*) or (empty($id) and (array:head($category) != $section/ShopCategoryId/text()))) then 
+                      () 
+                    else 
+                      (
+                        let $oldArticleIds := () (: ($oldVariants[number = $item/SupplierArticleId/text()]/articleId/text(),
+                                                    $oldArticles[mainDetailId = $item/SupplierArticleId/text()]/id/text()) => distinct-values() :)
+                        let $oldArticleId := if (empty($oldArticleIds)) then () else ($oldArticleIds[1])
                         
                         let $pric := map:get($prices-map, $item/SupplierArticleId/text())
                         let $priceDeactivate := empty($pric) or empty($pric//price[1]/text()) or (number(($pric//price)[1]/text()) <= 0)
-                        let $tax := if (empty($item/Feature[@Key = 'Steuerschlüssel'])) then '19' else 
+
+                        let $tax := 
+                          if (empty($item/Feature[@Key = 'Steuerschlüssel'])) then 
+                            '19' 
+                          else 
                             let $tax-val := tokenize($item/Feature[@Key = 'Steuerschlüssel']/text(), ' ')
-                            return substring($tax-val[count($tax-val)], 1, string-length($tax-val[count($tax-val)]) - 1)
+                            return 
+                              substring($tax-val[count($tax-val)], 1, string-length($tax-val[count($tax-val)]) - 1)
+
                         
-                        let $log := if(empty($pric)) then admin:write-log('empty price for  ' || $item/SupplierArticleId/text() || ' ' || string-join($pric//text(), ' '), 'WARNING') else ()
+                        let $log := 
+                          if(empty($pric)) then 
+                            admin:write-log('empty price for  ' || $item/SupplierArticleId/text() || ' ' || string-join($pric//text(), ' '), 'WARNING') 
+                          else ()
+
                         let $pricing := _:transform-price( if(empty($pric)) then _:empty-pricing($item/SupplierArticleId/text()) else $pric)
                         
                         let $shipping := map:get($store-map, $item/SupplierArticleId/text())                     
     
                         let $imageNames := _:file-names(($item/Image, $article/Image))
+
                         let $images := if ($delete-media-assignments) then _:clear-images() else _:images($imageNames, $media, empty($oldArticleId))
                         
                         (:
@@ -305,46 +338,49 @@ function _:upload-articles-by-section($id as xs:string?) {
                             _:downloads($downloadNames, $downloads[name = $downloadNames])
                         )
                         :)
-                        
-                        let $mainDetail := _:detail($article, $pos, $pricing, $priceDeactivate, $shipping, $oldArticles[id = $oldArticleId]/mainDetailId)
-                        let $newArticle := _:transform-article($article, $oldArticleId, $pos, true(), $mainDetail, $tax,
-                                    $category, $images, (), (: $download,:)  $unrestrictedCategory, $restrictedGroupId, (), (), map:get($index-map, $item/SupplierArticleId/text()), $propertyDef)
+                        let $mainDetailId := (for $x in $oldArticles where $x('id') = $oldArticleId return $x('mainDetailId') )
+                        let $mainDetail := _:detail($article, $pos, $pricing, $priceDeactivate, $shipping, $mainDetailId)
+
+                        let $newArticle := 
+                         _:transform-article($article, $oldArticleId, $pos, true(), $mainDetail, $tax,
+                                             $category, $images, (), (: $download,:)  $unrestrictedCategory, 
+                                             $restrictedGroupId, (), (), map:get($index-map, $item/SupplierArticleId/text()), $propertyDef)
     
                         return $newArticle
                     )
-                
-                }</json>
-                
-                (: return $articleUpload :)
-                (: return $json :)
-                
-                return try {
-                
-                    let $xml-log :=  file:write($common:ARTICLES-LOG || "-" || $section/ShopCategoryId || ".xml", $articleUpload) 
-                    let $json := json:serialize($articleUpload)
-                    let $json-log :=  file:write($common:ARTICLES-LOG || "-" || $section/ShopCategoryId || ".json", $json) 
-                    let $log4 :=    admin:write-log(concat('section serialized ', $section/Title/text()))
-                    let $upload := if ($test-run)
-                        then ()
-                        else HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-ARTICLES, shop:user(), shop:pwd(), $json)
-                    let $log5 :=    admin:write-log(concat('section uploaded ', $section/Title/text()))
-                    
-                    return try {
-                        json:parse($upload)
-                    } catch * {
-                        <failed>{$upload}</failed>
-                    }
-                
-                } catch * {
-                    <fatal>
-                        <description>{$err:description}</description>
-                        <module>{$err:module}</module>
-                        <line>{$err:line-number}</line>
-                        <trace>{$err:additional}</trace>
-                        {$articleUpload}
-                    </fatal>
                 }
                 
+            (: return $articleUpload :)
+            (: return $json :)
+                
+            return 
+              try {
+                (: let $xml-log :=  file:write($common:ARTICLES-LOG || "-" || $section/ShopCategoryId || ".xml", serialize($articleUpload) ) :) 
+                let $json     := fn:serialize($articleUpload, map{'method':'json'})
+                let $json-log := file:write-text($common:ARTICLES-LOG || "-" || $section/ShopCategoryId || ".json", $json) 
+                let $log4     := admin:write-log(concat('section serialized ', $section/Title/text()))
+                let $upload := 
+                  if ($test-run) then ()
+                  else HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-ARTICLES, shop:user(), shop:pwd(), $json)
+                let $log5 :=    admin:write-log(concat('section uploaded ', $section/Title/text()))
+                    
+                return 
+                  try {
+                    $upload
+                  } catch * {
+                    <failed>{$upload}</failed>
+                  }
+                
+                } catch * {
+                  <fatal>
+                    <description>{$err:description}</description>
+                    <module>{$err:module}</module>
+                    <line>{$err:line-number}</line>
+                    <trace>{$err:additional}</trace>
+                    {$articleUpload}
+                  </fatal>
+                }
+                , admin:write-log('section uploaded worked here' )
             }</section>
          ,
            (# basex:non-deterministic #) { <clearCache>{_:clear-caches()}</clearCache> }
@@ -352,9 +388,10 @@ function _:upload-articles-by-section($id as xs:string?) {
         )
         }</upload>
         
-        let $xml-file := file:write($common:ARTICLES-LOG, $articlesUpload update {insert node <dateTime>{current-dateTime()}</dateTime> into .})
+        let $xml-file := file:write-text($common:ARTICLES-LOG, serialize($articlesUpload, map{'method':'adaptive'}))
         
-        return  (<upload><success>{$common:ARTICLES-LOG-PATH}</success></upload>,
+        return ($articlesUpload,
+          (: <upload><success>{$common:ARTICLES-LOG-PATH}</success></upload>, :)
                 admin:write-log('FINISHED ARTICLES UPLOAD'))
     
     } catch * {
@@ -380,9 +417,9 @@ function _:update-article-stock() {
         let $log := admin:write-log('START STOCK UPLOAD')
         
         (: get all variants from shop :)
-        let $variants := _:variants()//data/_
+        let $variants := _:variants()?*
         (: open stock info :)
-        let $store := db:open($common:ERP-STORE-DB, $common:ERP-STORE-DB-FILE)
+        let $store := fn:parse-xml(file:read-text($common:ERP-STORE-DB || '/' || $common:ERP-STORE-DB-FILE))
         
         let $storeMap := map:merge(
             for $article in $store/store/article
@@ -391,7 +428,7 @@ function _:update-article-stock() {
         
         let $stockUpdate := <json objects="_" arrays="json" numbers="id inStock" booleans="active notification">{
             for $variant in $variants
-            let $shipping := map:get($storeMap, $variant/number/text())
+            let $shipping := map:get($storeMap, $variant)
             
             let $shippingTime := _:shipping-time($shipping)
             let $active := if($shipping/inactive/text() = 'TRUE') then 'false' else 'true'
@@ -410,11 +447,11 @@ function _:update-article-stock() {
             )
         }</json>
         
-        let $json := json:serialize($stockUpdate)
+        let $json := fn:serialize($stockUpdate, map{'method':'json'})
         let $upload := HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-VARIANTS, shop:user(), shop:pwd(), $json)
         
         let $stockUpload := try {
-            let $response := json:parse($upload)
+            let $response := $upload
             return <upload><dateTime>{current-dateTime()}</dateTime>{$response}</upload>
         } catch * {
             <upload><dateTime>{current-dateTime()}</dateTime><fatal>{$upload}</fatal></upload>
@@ -508,44 +545,55 @@ declare function _:file-names($file-elements as element()*) as xs:string* {
 };
 
 
-declare function _:images($imageNames as xs:string*, $media as element()*, $newArticle as xs:boolean) as element()* {
-    let $oldImages := for $img in $imageNames 
-                      return ($media[starts-with(name, $img)])[1]
-                      
-    return (
-        <____options__images type="object"><replace type="boolean">true</replace></____options__images>,
-        <images>{
-            for $image in $imageNames
-            let $oldImage := ($oldImages[starts-with(name, $image)])[1]
-            
-            return if (empty($oldImage)) then (
-                <_><link>file://{ $shop:PHP-PATH-DOCUMENTS || $image}.jpg</link></_>
-            ) else (
-                <_><mediaId>{$oldImage/id/text()}</mediaId></_>
-            )
-        }</images>
-    )
+declare function _:images($imageNames as xs:string*, $media as map(*), $newArticle as xs:boolean) as map(*) {
+  let $oldImages := for $img in $imageNames 
+                    return ($media[starts-with(.('name'), $img)])[1]
+  return                    
+  map{
+    'replace' : true(),
+    'images' : 
+      array {
+        for $image in $imageNames
+        let $oldImage := ($oldImages[starts-with(name, $image)])[1]
+        return 
+          if (empty($oldImage)) then 
+            map{
+              'link' : ``[file://`{ $shop:PHP-PATH-DOCUMENTS || $image}`.jpg]``
+            }
+          else 
+            map{
+              'mediaId' : $oldImage/id/text() => string()
+            }
+      }
+  }
 };
 
 (: replace image variable with this to erase all image assignments :)
-declare function _:clear-images() as element()* {
-    (<____options__images type="object"><replace type="boolean">true</replace></____options__images>,<images><_/></images>)
+declare function _:clear-images() as map(*) {
+  map{
+    'replace' : true(),
+    'images' : []
+  }
 };
 
-declare function _:downloads($downloadNames as xs:string*, $oldFiles as element()*) as element()* {
-    <downloads>{
+declare function _:downloads($downloadNames as xs:string*, $oldFiles as element()*) as map(*) {
+  map{
+    'downloads' : array {
         for $file in $downloadNames
         let $oldFile := ($oldFiles[name = $file])
         return if (empty($oldFile)) then (
-            <_><link>file://{ $shop:PDF-PATH-DOCUMENTS || $file}.pdf</link></_>
+          map{
+            'link' : ``[file://`{ $shop:PDF-PATH-DOCUMENTS || $file}`.pdf]``
+          }
         ) else (
-            <_>
-                {$oldFile/name}
-                <file>media/pdf/{ $oldFile/name/text() }.pdf</file>
-                <size>{$oldFile/fileSize/text()}</size>
-            </_>
+          map{
+            'name' : $oldFile/name => string(),
+            'file' : ``[media/pdf/`{ $oldFile/name/text() }`.pdf]``,
+            'size' : $oldFile/fileSize/text() => string()
+          }
         )
-    }</downloads>
+    }
+  }
 };
 
 
@@ -554,27 +602,27 @@ declare function _:detail($article as item(),
                           $index as xs:integer,
                           $prices as element(),
                           $priceDeactivate as xs:boolean,
-                          $shipping as item()*, $oldMainDetailId as node()*)
+                          $shipping as item()*, $oldMainDetailId ) as map(*)
 {
   let $shippingTime := _:shipping-time($shipping)
   let $amount := $shipping/amount/text()
+  let $m := map{
+      'active' : if ($priceDeactivate or ($shipping/inactive/text() = 'TRUE')) then 
+                 (
+                   false(),
+                   admin:write-log(concat('ARTICLE DEACTIVATED ', $article/ProductItem[$index]/SupplierArticleId/text()), 'INFO')
+                 ) else true(),
+      'shippingTime' : $shippingTime,
+      'inStock' : 0,
+      'number' : $article/ProductItem[$index]/SupplierArticleId/text() => string()
+      
+        
+    }
   return
-    <mainDetail>
-        <active>{
-            if ($priceDeactivate or ($shipping/inactive/text() = 'TRUE')) then (
-                'false', admin:write-log(concat('ARTICLE DEACTIVATED ', $article/ProductItem[$index]/SupplierArticleId/text()), 'INFO')
-            ) else 'true'
-        }</active>
-
-          <shippingTime>{$shippingTime}</shippingTime> 
-          <inStock>0</inStock>
-        {(
-            if (empty($oldMainDetailId)) then () else (<id>{$oldMainDetailId[1]/text()}</id>)
-        ,
-            $prices
-        )}
-        <number>{$article/ProductItem[$index]/SupplierArticleId/text()}</number>
-    </mainDetail>
+  if (empty($oldMainDetailId)) then 
+    $m
+  else
+    map:put($m, 'id', $oldMainDetailId[1]/text() => string()) 
 };
 
 
@@ -592,122 +640,138 @@ declare function _:shipping-time($shipping as item()*) {
 };
 
 
-declare function _:transform-article($article as element(),
-                                     $oldId as xs:string?,
+declare function _:transform-article($article,
+                                     $oldId,
                                      $index as xs:integer,
-                                     $isVariant as xs:boolean,
-                                     $detail as element(),
-                                     $tax as xs:string,
-                                     $categories as element(),
-                                     $images as element()*,
-                                     $downloads as element()?,
-                                     $unrestrictedArticle as xs:boolean,         (: articles sorted not in praxis have to be hidden for customer Group IK:)
-                                     $restrictedGroupId as element(),
+                                     $isVariant,
+                                     $detail,
+                                     $tax,
+                                     $categories,
+                                     $images,
+                                     $downloads,
+                                     $unrestrictedArticle,         (: articles sorted not in praxis have to be hidden for customer Group IK:)
+                                     $restrictedGroupId,
                                      $configuratorSet,
                                      $variants,
-                                     $reboSortIndex as element()?,
-                                     $propertyDef as map(*))
+                                     $reboSortIndex,
+                                     $propertyDef)
 {
+    let $thisItem := $article/ProductItem[$index]
     (: item or product feature :)
-    let $producer := ($article/ProductItem[$index]/Feature[@Key = 'Firmenbezeichnung'], $article/Feature[@Key = 'Firmenbezeichnung'])[1]/text()
-    let $company := ($article/ProductItem[$index]/Feature[@Key = 'Pharmaz. Unternehmer'], $article/Feature[@Key = 'Pharmaz. Unternehmer'])[1]/text()
-    let $pzn := ($article/ProductItem[$index]/Feature[@Key = 'PZN'], $article/Feature[@Key = 'PZN'])[1]/text()
-    let $substances := ($article/ProductItem[$index]/Feature[@Key = 'Wirkstoffe'], $article/Feature[@Key = 'Wirkstoffe'])[1]/text()
-    let $pharmaceuticalForm := ($article/ProductItem[$index]/Feature[@Key = 'Darreichungsform'], $article/Feature[@Key = 'Darreichungsform'])[1]/text()
+    let $producer := ($thisItem/Feature[@Key = 'Firmenbezeichnung'], $article/Feature[@Key = 'Firmenbezeichnung'])[1]/text()
+    let $company := ($thisItem/Feature[@Key = 'Pharmaz. Unternehmer'], $article/Feature[@Key = 'Pharmaz. Unternehmer'])[1]/text()
+    let $pzn := ($thisItem/Feature[@Key = 'PZN'], $article/Feature[@Key = 'PZN'])[1]/text()
+    let $substances := ($thisItem/Feature[@Key = 'Wirkstoffe'], $article/Feature[@Key = 'Wirkstoffe'])[1]/text()
+    let $pharmaceuticalForm := ($thisItem/Feature[@Key = 'Darreichungsform'], $article/Feature[@Key = 'Darreichungsform'])[1]/text()
     let $wk := string-join($article/WK, ' ')
-    let $name-token := if ($isVariant) then tokenize($article/ProductItem[$index]/Name, ' ') else tokenize($article/ProductName, ' ')
+    let $name-token := if ($isVariant) then tokenize($thisItem/Name , ' ') else tokenize($article/ProductName, ' ')
     let $name-token2 := if(string-length($name-token[1]) < 5) then $name-token[1] || ' ' || $name-token[2] else substring($name-token[1], 1, 4)
     let $name-token3 := if(string-length($name-token[1]) > 7) then substring($name-token[1], 1, 6) else ''
     let $name-token4 := if(string-length($name-token[1]) > 9) then substring($name-token[1], 1, 8) else ''
     
     let $keywords :=  $name-token[1] || ' ' || $name-token2 || ' ' || $name-token3 || ' ' || $name-token4 || ' '  || $wk || ' ' || $substances || ' ' || $pzn
     
-    let $text1 := ($article/ProductItem[$index]/Text[@Key = 'Beschreibung'], $article/Text[@Key = 'Beschreibung'])[1]
-    let $text2 := ($article/ProductItem[$index]/Text[@Key = 'Technische Daten'], $article/Text[@Key = 'Technische Daten'])[1]
+    let $text1 := ($thisItem/Text[@Key = 'Beschreibung'], $article/Text[@Key = 'Beschreibung'])[1]
+    let $text2 := ($thisItem/Text[@Key = 'Technische Daten'], $article/Text[@Key = 'Technische Daten'])[1]
     
-    let $lastStock-and-notify := if($detail/shippingTime/text() = $_:NO_SHIPPING) then 'true' else 'false'
+    let $lastStock-and-notify := if($detail('shippingTime') = $_:NO_SHIPPING) then 'true' else 'false'
+(: <json objects="article mainDetail configuratorSet attribute propertyGroup option _" booleans=" isMain"
+         arrays="json categories prices variants configuratorOptions groups options images customerGroups propertyValues" numbers="id mediaId from price inStock"> :)
+    let $m :=  map{
+            'name' : if ($isVariant) then 
+                       $thisItem/Name/text() => string() 
+                     else 
+                       $article/ProductName/text() => string(),
+            'active' : if($detail('active')) then $detail('active') else true(),
+                       (: if ((contains(lower-case($article/Feature[@Key = 'Gesperrt']), 'true')) or (contains(lower-case($article/ProductItem[$index]/Feature[@Key = 'Gesperrt']), 'true'))) then 'false' else 'true' :)
+            'keywords' : array {$keywords => tokenize()},
+            'tax' : $tax => fn:number(),
+            'supplier' : if ($producer != '') then $producer else if ($company != '') then $company else 'Sonstiges',
+            'description' : if ($isVariant) then 
+                              $article/ProductName/text() => string()
+                            else
+                              $thisItem/Name/text() => string(),
+            'lastStock' : $lastStock-and-notify => xs:boolean(),
+            'notification' : $lastStock-and-notify => xs:boolean(),
+            'attribute' : map{$reboSortIndex => string() : 
+                              <axxCoolingRequ>{
+                                if (not(empty($article/ProductItem[$index]/Feature[@Key = 'Temperatur Eigenschaften'])) and 
+                                    contains($article/ProductItem[$index]/Feature[@Key = 'Temperatur Eigenschaften'], 'Kühlkette')) 
+                                then '1' else '0'
+                              }</axxCoolingRequ>
+                          }
+          }
+    let $m1 := if (empty($oldId)) then $m else map:put($m, 'id', $oldId)
+    let $m2 := (
+      let $textMain := $article/Text[Key/text() = 'Beschreibung']/xhtml
+      let $textItem := $thisItem/Text[Key/text() = 'Beschreibung']/xhtml
+      return 
+        if (empty($textMain) and empty($textItem)) then 
+          $m1 
+        else
+          let $ser := serialize($text1/xhtml/node()) || serialize($text2/xhtml/node())
+          return
+            map:put($m1, 'descriptionLong', $ser)
+      
+    )
+    let $m3 := (
+      if ((not(empty($substances)) and ($substances != '')) or (not(empty($pharmaceuticalForm)) and ($pharmaceuticalForm != ''))) then 
+      (
+        let $propertyGroup := map:get($propertyDef, 'Medikamente')
+        where not(empty($propertyGroup))
+        return
+        map {
+          'filterGroupId' : $propertyGroup/id/text() => string(),
+          'propertyValues' :
+            let $list := (
+              if (not(empty($substances)) and ($substances != '')) then 
+              (
+                let $substanceSeq := tokenize($substances, ', ')
+                for $substance in distinct-values($substanceSeq)
+                return 
+                (: NOTE: cannot have multiple identical values AND not exceed 255 chars :)
+                  map{
+                    'option' : 
+                      map{
+                        'name' : 'Wirkstoff',
+                        'value' : substring($substance, 1, 254)
+                      }
+                  }
+              ) else (),
+              if (not(empty($pharmaceuticalForm)) and ($pharmaceuticalForm != '')) then 
+              (
+                map{
+                  'option' : 
+                    map{
+                      'name' : 'Darreichungsform',
+                      'value' : substring($pharmaceuticalForm, 1, 254)
+                    }
+                }
+              ) else ())
+            return
+              array { $list }
+              
+            }
+      )
+      else $m2
+    )
+    let $m4 := if ($unrestrictedArticle) then
+                 map:put($m3, 'customerGroups', [])
+               else
+                 map:put($m3, 'customerGroups', $restrictedGroupId)
+    let $mTemp := 
+      map{
+        'categories' : $categories,
+        'images'     : $images,
+        'downloads'  : $downloads,
+        'detail'     : $detail,
+        'configuratorSet' : $configuratorSet,
+        'variants'   : $variants
+      }
     return
-    <_>
-        <name>{if ($isVariant) then (
-            $article/ProductItem[$index]/Name/text()
-        ) else (
-            $article/ProductName/text()
-        )
-        }</name>
-        <active>{
-            if($detail/active/text()) then $detail/active/text() else 'true'
-           (: if ((contains(lower-case($article/Feature[@Key = 'Gesperrt']), 'true')) or (contains(lower-case($article/ProductItem[$index]/Feature[@Key = 'Gesperrt']), 'true'))) then 'false' else 'true' :)
-        }</active>
-        <keywords>{$keywords}</keywords>
-        <tax>{$tax}</tax>
-        <supplier>{if ($producer != '') then $producer else if ($company != '') then $company else 'Sonstiges'}</supplier>
-        <description>{
-            if ($isVariant) then (
-                $article/ProductName/text()
-            ) else (
-                $article/ProductItem[$index]/Name/text()
-            )
-        }</description>
-        <lastStock>{$lastStock-and-notify}</lastStock>
-        <notification>{$lastStock-and-notify}</notification>
-        <attribute>{(
-            $reboSortIndex
-            ,
-            <axxCoolingRequ>{if (not(empty($article/ProductItem[$index]/Feature[@Key = 'Temperatur Eigenschaften'])) and contains($article/ProductItem[$index]/Feature[@Key = 'Temperatur Eigenschaften'], 'Kühlkette')) then '1' else '0'}</axxCoolingRequ>
-        )}</attribute>
-        {(
-            if (empty($oldId)) then () else (<id>{$oldId}</id>)
-            ,
-            let $textMain := $article/Text[Key/text() = 'Beschreibung']/xhtml
-            let $textItem := $article/ProductItem[$index]/Text[Key/text() = 'Beschreibung']/xhtml
-            return if (empty($textMain) and empty($textItem)) then () else (
-                <descriptionLong>{(
-                  serialize($text1/xhtml/node()),
-                   serialize($text2/xhtml/node())
-                (: if (empty($textMain)) then () else (serialize($textMain/*)),
-                if (empty($textItem) and not($isVariant)) then () else (serialize($textItem/*)) :)
-                
-                )}</descriptionLong>
-            ),
-           if ((not(empty($substances)) and ($substances != '')) or (not(empty($pharmaceuticalForm)) and ($pharmaceuticalForm != ''))) then (
-                let $propertyGroup :=map:get($propertyDef, 'Medikamente')
-                where not(empty($propertyGroup))
-                return (<filterGroupId>{$propertyGroup/id/text()}</filterGroupId>,
-                <propertyValues>{(
-                    if (not(empty($substances)) and ($substances != '')) then (
-                         let $substanceSeq := tokenize($substances, ', ') 
-                         for $substance in distinct-values($substanceSeq)
-                         return 
-                         (: NOTE: cannot have multiple identical values AND not exceed 255 chars :)
-                            <_>
-                                <option><name>Wirkstoff</name></option>
-                                <value>{substring($substance, 1, 254)}</value>
-                            </_>
-                    ) else ()
-                    ,
-                    if (not(empty($pharmaceuticalForm)) and ($pharmaceuticalForm != '')) then (
-                        <_>
-                            <option><name>Darreichungsform</name></option>
-                            <value>{substring($pharmaceuticalForm, 1, 254)}</value>
-                        </_> 
-                     ) else ()
-                
-                )}</propertyValues>)
-            ) else ()
-            , 
-            if ($unrestrictedArticle) then (
-                <customerGroups></customerGroups>
-            ) else (
-                <customerGroups><_>{$restrictedGroupId}</_></customerGroups>
-            ),
-            $categories,
-            $images,
-            $downloads,
-            $detail,
-            $configuratorSet,
-            $variants
-        )}
-    </_>
+      map:merge( ($m4, $mTemp) )
+    
+    
 };
 
 
@@ -826,7 +890,6 @@ declare
 function _:category-assignment() {
     let $sections :=
     for $feat in common:pim-get( '/pim/api/shop-features' )//Feature
-(:    for $feat in db:open('ProductInfo')//Feature[@Key  ='Kategorie Onlineshop'] :)
     let $val := $feat/Value[1]
     group by $val
     return 
@@ -907,9 +970,9 @@ function _:update-images() {
         let $id := $media[name = $image]/id/text()
         return if (empty($id)) then () else
         let $update := <json objects="json"><file>file://{$shop:PHP-PATH-DOCUMENTS || $image}.jpg</file></json>
-        let $json := json:serialize($update)
+        let $json := fn:serialize($update, map{'method':'json'})
         return try {
-            json:parse(
+            fn:parse-json(
                 HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-MEDIA || $id, shop:user(), shop:pwd(), $json)
             )
         } catch * {

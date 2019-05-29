@@ -1,14 +1,17 @@
 module namespace _= "custom/shop/shop-prices";
 
-import module namespace functx = "http://www.functx.com";
-import module namespace conf = "pim/config";
-import module namespace shop = "custom/shop/config";
+import module namespace functx = "http://www.functx.com" at "../../repo/functx/functx-1.0-nodoc-2007-01.xq";
+import module namespace conf = "pim/config" at "../../repo/pim/config.xqm";
+import module namespace shop = "custom/shop/config" at "../../repo/custom/shop/config.xqm";
+
+import module namespace common = "custom/shop/shop-common" at "shop-common.xqm";
+import module namespace shop-articles = "custom/shop/shop-articles" at "shop-articles.xqm";
 
 import module namespace shop-customers = "custom/shop/shop-customers" at "shop-customers.xqm";
-import module namespace shop-articles = "custom/shop/shop-articles" at "shop-articles.xqm";
-import module namespace common = "custom/shop/shop-common" at "shop-common.xqm";
 
-import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper';
+import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper' at "../../repo/java/HTTPWrapper.xqm";
+
+import module namespace admin = "admin/log" at "../../repo/admin/log.xqm";
 
 declare variable $_:SPECIAL_VK_GROUPS := ('Vk1', 'Vk3', 'Vk6');
 declare variable $_:SPECIAL_VK_NUMBERS := $_:SPECIAL_VK_GROUPS ! substring(., 3, 1);
@@ -17,6 +20,8 @@ declare variable $_:SPECIAL_VK_NUMBERS := $_:SPECIAL_VK_GROUPS ! substring(., 3,
 declare
   %rest:GET
   %rest:path("/shop/userprices")
+  %rest:produces('application/json')
+  %output:method('json')
 function _:prices() as item() {
     common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-PRICES, '?limit=5000000'))
 };
@@ -24,6 +29,8 @@ function _:prices() as item() {
 declare
   %rest:GET
   %rest:path("/shop/userpricegroups")
+  %rest:produces('application/json')
+  %output:method('json')
 function _:groups() as item() {
     common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-GROUPS, '?limit=500000'))
 };
@@ -32,16 +39,11 @@ declare
   %rest:GET
   %rest:path("/shop/userprices/delete")
 function _:delete-prices() as item() {
-    let $prices := common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-PRICES, '?limit=20000'))
-    let $del := <json  objects="_" arrays="json" numbers="id">{
-        for $price in $prices//data/_
-        return <_>{$price/id}</_>
-    }</json>
-    let $json := json:serialize($del)
+    let $json := common:get-request(shop:protocol(), shop:host(), shop:port(), concat($shop:PATH-PRICES, '?limit=20000'))
     let $upload := HTTPWrapper:delete(shop:protocol(), shop:host(), shop:port(), $shop:PATH-PRICES, shop:user(), shop:pwd(), $json)
-    return if (empty($del//id)) then (
+    return if (array:size($json) = 0) then (
             try {
-            json:parse($upload)
+            $upload
         } catch * {
             <failed>{$upload}</failed>
         }
@@ -75,7 +77,7 @@ function _:upload-groups() {
     return try {
     
         let $groups := _:groups()
-        let $prices := db:open($common:ERP-USERPRICE-DB, $common:ERP-USERPRICE-DB-FILE)
+        let $prices := fn:doc($common:ERP-USERPRICE-DB || '/' || $common:ERP-USERPRICE-DB-FILE)
         
         let $customers := (# basex:non-deterministic #) {
             (shop-customers:customers(),
@@ -88,7 +90,7 @@ function _:upload-groups() {
         )
         
         let $groupNames := distinct-values($prices//userprice/addressnumber/text())
-        let $noneZeroCustomers := db:open($common:ERP-DB, $common:ERP-DB-FILE)/customers/customer[priceGroupId != '0 Endkunden']
+        let $noneZeroCustomers := fn:doc($common:ERP-DB || '/' || $common:ERP-DB-FILE)/customers/customer[priceGroupId != '0 Endkunden']
         let $modifiedGroupNames := ($_:SPECIAL_VK_GROUPS,
             for $g in $groupNames
             where not(empty(map:get($customersMap, $g)))
@@ -128,13 +130,13 @@ function _:upload-groups() {
         }</json> }
         
         
-        let $jsonG := json:serialize($groupUpload)
+        let $jsonG := ($groupUpload)
         let $uploadedGroups := <groupUpload>{
             let $response := if ($test-run)
                 then file:write($common:ERP-PATH || 'groupUploadTest.xml', $groupUpload)
                 else HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-GROUPS, shop:user(), shop:pwd(), $jsonG)
             return try {
-                json:parse($response)
+                ($response)
             } catch * {
                 <failed></failed>
             }
@@ -142,11 +144,11 @@ function _:upload-groups() {
         
     (:    
         (: delete groups not needed any more :)
-        let $jsonD := json:serialize($groupDelete)
+        let $jsonD := ($groupDelete)
         let $deletedGroups := (# basex:non-deterministic #) { <groupDelete>{
             let $response := HTTPWrapper:delete(shop:host(), xs:int(shop:port()), $shop:PATH-GROUPS, shop:user(), shop:pwd(), $jsonD)
             return try {
-                json:parse($response)
+                ($response)
             } catch * {
                 <failed></failed>
             }
@@ -267,7 +269,7 @@ function _:upload-prices() {
         let $price-delete := (# basex:non-deterministic #) { if ($test-run) then () else _:delete-prices() }
         let $log := admin:write-log('old prices deleted', 'INFO')
         
-        let $prices := db:open($common:ERP-USERPRICE-DB, $common:ERP-USERPRICE-DB-FILE)
+        let $prices := fn:doc($common:ERP-USERPRICE-DB || '/' || $common:ERP-USERPRICE-DB-FILE)
         let $prices-map := map:merge(
             for $p at $pos in $prices//userprice
             return if (empty($p/addressnumber/text()) or empty($p/articlenumber/text()) or empty($p/deviation/text())) then (
@@ -276,7 +278,7 @@ function _:upload-prices() {
                 map:entry($pos, $p)
             )
         )
-        let $customers := db:open($common:ERP-DB, $common:ERP-DB-FILE)
+        let $customers := fn:doc($common:ERP-DB || '/' || $common:ERP-DB-FILE)
         let $noneZeroCustomers := $customers/customers/customer[priceGroupId != '0 Endkunden']
     
         let $variants := shop-articles:variants()
@@ -300,14 +302,14 @@ function _:upload-prices() {
                 )
             )
         }</json>
-        let $pricesJson := json:serialize($specificPriceUpload)
+        let $pricesJson := ($specificPriceUpload)
         let $pricesResult := _:wrap-specialprices-upload($pricesJson, 'specific', $test-run)
 (: end upload of prices for all (none VkX, X>0) customers with special prices:)   
         
         
 (: prices for price groups (VkX, X>0), with or without special prices :)
 
-        let $articlePrices := db:open($common:ERP-PRICE-DB, $common:ERP-PRICE-DB-FILE)
+        let $articlePrices := fn:doc($common:ERP-PRICE-DB || '/' || $common:ERP-PRICE-DB-FILE)
         let $articlePrices-map := map:merge(
             for $p in $articlePrices//pricing
             return map:entry($p/articlenumber/text(), $p)
@@ -363,7 +365,7 @@ function _:upload-prices() {
                         )
                 }</json>
                 
-                let $groupsJson := json:serialize($specialGroupPriceUpload)
+                let $groupsJson := ($specialGroupPriceUpload)
                 return _:wrap-specialprices-upload($groupsJson, $sg, $test-run)
         
         let $clearCache := (# basex:non-deterministic #) { <clearCache>{shop-articles:clear-caches()}</clearCache> }
@@ -385,7 +387,7 @@ declare function _:wrap-specialprices-upload($json, $group, $test-run as xs:bool
         then file:write-text($common:ERP-PATH || 'pricesUploadTest_' || $group || '.xml', $json)
         else HTTPWrapper:putJSON(shop:protocol(), shop:host(), shop:port(), $shop:PATH-PRICES, shop:user(), shop:pwd(), $json)
     return try {
-        json:parse($upload)
+        ($upload)
     } catch * {
         <failed>{$upload}</failed>
     }

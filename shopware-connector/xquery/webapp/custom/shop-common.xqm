@@ -2,14 +2,16 @@ xquery version "3.1";
 
 module namespace _= "custom/shop/shop-common";
 
-import module namespace Shopware = 'de.axxepta.syncrovet.api.Shopware';
-import module namespace FTPWrapper = 'de.axxepta.syncrovet.ftp.FTPWrapper';
-import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper';
-import module namespace EMail = 'de.axxepta.syncrovet.email.Mail';
+import module namespace Shopware = 'de.axxepta.syncrovet.api.Shopware' at "../../repo/java/Shopware.xqm";
+import module namespace FTPWrapper = 'de.axxepta.syncrovet.ftp.FTPWrapper' at "../../repo/java/FTPWrapper.xqm";
+import module namespace HTTPWrapper = 'de.axxepta.syncrovet.http.HTTPWrapper' at "../../repo/java/HTTPWrapper.xqm";
+import module namespace EMail = 'de.axxepta.syncrovet.email.Mail' at "../../repo/java/EMail.xqm";
 
-import module namespace functx = "http://www.functx.com";
-import module namespace conf = "pim/config";
-import module namespace shop = "custom/shop/config";
+import module namespace functx = "http://www.functx.com" at "../../repo/functx/functx-1.0-nodoc-2007-01.xq";
+
+import module namespace shop = "custom/shop/config" at "../../repo/custom/shop/config.xqm";
+
+import module namespace admin = "admin/log" at "../../repo/admin/log.xqm";
 
 declare variable $_:PIM-PORT := $shop:PIM-PORT;
 
@@ -44,16 +46,16 @@ declare variable $_:ERP-XSL-PATH := file:resolve-path($_:ERP-XSL);
 
 declare variable $_:ERP-DB := 'Customer.ERP';
 declare variable $_:ERP-DB-FILE := 'ERP_DATA.xml';
-declare variable $_:ERP-PRICE-DB := 'Prices.ERP';
+declare variable $_:ERP-PRICE-DB := 'http://syncrovet.axxepta.de/shopware-connector/data/prices';
 declare variable $_:ERP-PRICE-DB-FILE := 'Prices.xml';
-declare variable $_:ERP-USERPRICE-DB := 'UserPrices.ERP';
+declare variable $_:ERP-USERPRICE-DB := 'http://syncrovet.axxepta.de/shopware-connector/data/prices';
 declare variable $_:ERP-USERPRICE-DB-FILE := 'UserPrices.xml';
-declare variable $_:ERP-STORE-DB := 'Store.ERP';
+declare variable $_:ERP-STORE-DB := 'http://syncrovet.axxepta.de/shopware-connector/data/articles';
 declare variable $_:ERP-STORE-DB-FILE := 'Store.xml';
 declare variable $_:ERP-ORDERS-DB := 'Orders.ERP';
 declare variable $_:ERP-ORDERS-DB-FILE := 'Orders.xml';
 declare variable $_:ERP-TRACKING-DB-FILE := 'Tracking.xml';
-declare variable $_:ERP-INDEX-DB := 'Index.ERP';
+declare variable $_:ERP-INDEX-DB := 'http://syncrovet.axxepta.de/shopware-connector/data/articles';
 declare variable $_:ERP-INDEX-DB-FILE := 'Index.xml';
 
 declare variable $_:FILE-DUPLICATES := 'erp-orders-pipe/Doubletten.log';
@@ -75,33 +77,48 @@ declare variable $_:ERP-TRACKING-LOG := file:resolve-path($_:ERP-TRACKING-LOG-PA
 
 
 declare function _:ftp-get($user as xs:string, $pwd as xs:string, $host as xs:string, $ftp-path as xs:string, $file as xs:string) as item() {
-    FTPWrapper:download($user, $pwd, $host, $ftp-path, $file)
+     FTPWrapper:download($user, $pwd, $host, $ftp-path, $file)
 };
 
 declare
   %rest:GET
   %rest:path("/erp/ftp-up/{$file}")
 function _:ftp-up($file as xs:string) as item() {
-    (FTPWrapper:upload($shop:FTP-USER, $shop:FTP-PWD, $shop:FTP-HOST, '/var/shop/' || $file, $_:ERP-PATH || $file),
-    admin:write-log('Uploading ' || $file || ' per FTP') )
+  (
+    FTPWrapper:upload($shop:FTP-USER, $shop:FTP-PWD, $shop:FTP-HOST, '/var/shop/' || $file, $_:ERP-PATH || $file),
+    admin:write-log('Uploading ' || $file || ' per FTP') 
+  )
 };
 
 declare
   %rest:GET
   %rest:path("/erp/ftp-up/{$path}/{$file}")
 function _:ftp-relative-up($path as xs:string, $file as xs:string) as item() {
-    (FTPWrapper:upload($shop:FTP-USER, $shop:FTP-PWD, $shop:FTP-HOST, '/var/shop/' || $file, $_:ERP-PATH || $path || "/" || $file),
-    admin:write-log('Uploading ' || $file || ' per FTP') )
+  (
+      FTPWrapper:upload(
+      $shop:FTP-USER, 
+      $shop:FTP-PWD, 
+      $shop:FTP-HOST, 
+      '/var/shop/' || $file, 
+      $_:ERP-PATH || $path || "/" || $file),
+    admin:write-log('Uploading ' || $file || ' per FTP') 
+  )
 };
 
 declare
   %rest:GET
   %rest:path("/erp/ftp-test-up/{$path}/{$file}")
 function _:ftp-test-relative-up($path as xs:string, $file as xs:string) as item() {
-    (FTPWrapper:upload($shop:FTP-TEST-USER, $shop:FTP-TEST-PWD, $shop:FTP-HOST, '/var/shop/' || $file, $_:ERP-TEST-PATH || $path || "/" || $file),
-    admin:write-log('Uploading ' || $file || ' per FTP') )
+  (
+    FTPWrapper:upload(
+      $shop:FTP-TEST-USER, 
+      $shop:FTP-TEST-PWD, 
+      $shop:FTP-HOST, 
+      '/var/shop/' || $file, 
+      $_:ERP-TEST-PATH || $path || "/" || $file),
+    admin:write-log('Uploading ' || $file || ' per FTP') 
+  )
 };
-
 
 declare function _:FTP-list($user as xs:string, $pwd as xs:string, $host as xs:string, $ftp-path as xs:string) as item() {
    (: FTPWrapper:list($user, $pwd, $host, shop:FTP-port(), $ftp-path, $shop:FTP-PROXY-HOST, shop:FTP-proxy-port()) :) 
@@ -139,19 +156,22 @@ declare function _:send-hazard-mail($reportFile as xs:string) {
 };
 
 declare function _:post-request($protocol as xs:string, $host as xs:string, $port as xs:int, $path as xs:string, $content as xs:string) {
-    HTTPWrapper:postJSON($protocol, $host, $port, $path, shop:user(), shop:pwd(), json:parse($content))
+    HTTPWrapper:postJSON($protocol, $host, $port, $path, shop:user(), shop:pwd(), fn:parse-json($content))
 };
 
 declare function _:put-request($protocol as xs:string, $host as xs:string, $port as xs:int, $path as xs:string, $content as xs:string) {
-    HTTPWrapper:putJSON($protocol, $host, $port, $path, shop:user(), shop:pwd(), json:parse($content))
+    HTTPWrapper:putJSON($protocol, $host, $port, $path, shop:user(), shop:pwd(), fn:parse-json($content))
 };
 
-declare function _:get-request($protocol as xs:string, $host as xs:string, $port as xs:int, $path as xs:string) as item() {
-    let $result := HTTPWrapper:get($protocol, $host, $port, $path, shop:user(), shop:pwd())
-    let $response := json:parse($result)
-    return if($response/json/success = "false")
-        then error(xs:QName("HC0001"), "Unexpected HTTP response, Status code " || $response/json/status || " " || $response/json/error)
-        else $response
+declare function _:get-request($protocol as xs:string, $host as xs:string, $port as xs:int, $path as xs:string) as item()* {
+  let $result := HTTPWrapper:get($protocol, $host, $port, $path, shop:user(), shop:pwd())
+  return 
+    if($result('success') = false()) then 
+      let $status := $result('status') => xs:string()
+      let $error := $result('error') => xs:string()
+      return
+      error(xs:QName("HC0001"), "Unexpected HTTP response, Status code " || $status || " " || $error)
+    else $result
 };
 
 declare function _:get-xml-request($protocol as xs:string, $host as xs:string, $port as xs:int, $path as xs:string) as item() {
@@ -163,11 +183,11 @@ declare function _:get-shopware-request($protocol as xs:string, $host as xs:stri
 };
 
 declare function _:pim-get($path) {
-    parse-xml(HTTPWrapper:get(shop:pim-protocol(), 'localhost', shop:pim-port(), $path, 'admin', 'admin'))
+  HTTPWrapper:get(shop:pim-protocol(), 'localhost', shop:pim-port(), $path, 'admin', 'admin')
 };
 
 declare function _:pim-get-server($path) {
-    parse-xml(HTTPWrapper:get(shop:pim-protocol(), substring($shop:PIM-HOST, 8), shop:pim-port(), $path, 'admin', 'admin'))
+  HTTPWrapper:get(shop:pim-protocol(), substring($shop:PIM-HOST, 8), shop:pim-port(), $path, 'admin', 'admin')
 };
 
 declare
@@ -205,7 +225,7 @@ declare
   %rest:GET
   %rest:path("/shop/shops/json")
   %output:method("json")
-  %output:json("format=direct")
+  (: %output:json("format=direct") :)
 function _:shops-json() as item() {
     <json objects='_' arrays='json'>
         {for $shop in _:shops()/shop
